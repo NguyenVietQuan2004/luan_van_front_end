@@ -115,7 +115,9 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
-
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -126,4 +128,33 @@
   html {
     @apply font-sans;
   }
+}
+
+.input-form {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.2s;
+  background-color: #fff;
+}
+
+.input-form:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+.input-form::placeholder {
+  color: #9ca3af;
+}
+
+/* Style cho phần array (Nghề nghiệp, Huy hiệu, Lịch sử) */
+.array-item {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
 }
