@@ -219,59 +219,6 @@ export default function BienBanFormPage() {
     return result;
   };
 
-  // const onSubmit = async (data: BienBanForm) => {
-  //   try {
-  //     // Bước 1: Gọi API phân loại heading (nếu vẫn cần)
-  //     const classifyRes = await fetch("http://127.0.0.1:8000/classify-meeting", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({
-  //         fullString: JSON.stringify(data.fullString), // không cần JSON.stringify nữa
-  //         structure: JSON.stringify(flattenHeadingsNumbered(data.headings)),
-  //       }),
-  //     });
-
-  //     if (!classifyRes.ok) throw new Error("Lỗi phân loại nội dung");
-
-  //     const classified = await classifyRes.json(); // nhận mảng các item đã phân loại
-
-  //     console.log("Kết quả phân loại:", classified);
-
-  //     // Bước 2: Gọi API tạo file Word
-  //     const docRes = await fetch("http://127.0.0.1:8000/create-docx", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/json" },
-  //       body: JSON.stringify({
-  //         ...data,
-  //         classified, // ← truyền kết quả phân loại vào đây
-  //       }),
-  //     });
-
-  //     if (!docRes.ok) {
-  //       throw new Error(`Lỗi tạo file: ${docRes.status} ${docRes.statusText}`);
-  //     }
-
-  //     // Lấy blob (dữ liệu binary của file .docx)
-  //     const blob = await docRes.blob();
-
-  //     // Tạo link tải về
-  //     const url = window.URL.createObjectURL(blob);
-  //     const link = document.createElement("a");
-  //     link.href = url;
-  //     link.download = "BienBanCuocHop.docx"; // tên file khi tải về
-  //     document.body.appendChild(link);
-  //     link.click();
-
-  //     // Dọn dẹp
-  //     document.body.removeChild(link);
-  //     window.URL.revokeObjectURL(url);
-
-  //     console.log("File đã được tải về!");
-  //   } catch (err) {
-  //     console.error("Lỗi khi tạo/tải biên bản:", err);
-  //     alert("Có lỗi xảy ra khi tạo file Word. Vui lòng kiểm tra console.");
-  //   }
-  // };
   const handleDownload = () => {
     if (!downloadUrl) return;
 

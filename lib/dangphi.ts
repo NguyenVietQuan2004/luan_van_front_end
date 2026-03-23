@@ -1,6 +1,7 @@
 import { DangPhi } from "@/types/dangphi";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const API_BASE = process.env.NEXT_PUBLIC_API_ENDPOINT + "/api";
+
 export async function fetchDangPhiList(): Promise<DangPhi[]> {
   const res = await fetch(`${API_BASE}/dangphi`, { cache: "no-store" });
   if (!res.ok) throw new Error("Không tải được danh sách đảng phí");

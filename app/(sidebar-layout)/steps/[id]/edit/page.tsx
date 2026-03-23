@@ -18,7 +18,6 @@ export default function EditStepPage() {
     const fetchData = async () => {
       try {
         const data = await fetchStepById(id);
-        console.log(data);
 
         setInitialData(data);
       } catch (err) {

@@ -37,9 +37,6 @@ export default function StepsPage() {
     }
   };
 
-  useEffect(() => {
-    console.log("ENV:", process.env.NEXT_PUBLIC_API_URL);
-  }, []);
   if (loading) return <div className="p-6 text-center">Đang tải...</div>;
 
   return (
@@ -74,7 +71,7 @@ export default function StepsPage() {
               <td className="border px-3 py-2">
                 {step.template_file ? (
                   <a
-                    href={`http://localhost:5000${step.template_file}`}
+                    href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${step.template_file}`}
                     target="_blank"
                     className="text-blue-600 hover:underline"
                   >

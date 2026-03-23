@@ -1,7 +1,7 @@
 // lib/api.ts
 
 import { LuongCoSo } from "@/types/luongcoso";
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const API_BASE = process.env.NEXT_PUBLIC_API_ENDPOINT + "/api";
 
 export async function fetchLuongCoSoList(): Promise<LuongCoSo[]> {
   const res = await fetch(`${API_BASE}/luongcoso`, { cache: "no-store" });

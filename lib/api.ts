@@ -1,8 +1,7 @@
 import { DangVien } from "@/types/dangvien";
 
 // lib/api.ts
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
-
+const API_BASE = process.env.NEXT_PUBLIC_API_ENDPOINT + "/api";
 export async function fetchDangVienList(): Promise<DangVien[]> {
   const res = await fetch(`${API_BASE}/dang-vien`, { cache: "no-store" });
   if (!res.ok) throw new Error("Không tải được danh sách");

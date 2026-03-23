@@ -24,7 +24,6 @@ export default function LuongCoSoPage() {
       setLoading(false);
     }
   };
-  console.log(data);
 
   useEffect(() => {
     loadData();

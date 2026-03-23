@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import { DataTable } from "@/components/data-table";
 import { DocumentColumns } from "./table/document-columns";
+import PartyEmailsSettings from "@/components/PartyEmailsSettings";
 
 interface ExtractionResult {
   markdown: string | null;
@@ -42,14 +43,12 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [selectedDoc, setSelectedDoc] = useState<Document | null>(null);
-  console.log(documents);
   useEffect(() => {
     fetchDocuments();
   }, []);
-
   const fetchDocuments = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/documents");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/documents`);
       if (!res.ok) throw new Error(await res.text());
       const data = await res.json();
       setDocuments(Array.isArray(data) ? data : data.data || []);
@@ -76,7 +75,7 @@ export default function Home() {
     formData.append("file", file);
 
     try {
-      const extractRes = await fetch(`${process.env.NEXT_PUBLIC_API_EXTRACT || "http://localhost:8000"}/extract`, {
+      const extractRes = await fetch(`${process.env.NEXT_PUBLIC_API_AI}/extract`, {
         method: "POST",
         body: formData,
       });
@@ -96,7 +95,7 @@ export default function Home() {
         }),
       );
 
-      const saveRes = await fetch("http://localhost:5000/api/documents", {
+      const saveRes = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/documents`, {
         method: "POST",
         body: saveFormData,
       });
@@ -184,6 +183,7 @@ export default function Home() {
             )}
           </div>
 
+          <PartyEmailsSettings />
           {/* Lịch sử DataTable ngay bên dưới, không có khoảng trống thừa */}
           <div className="p-4">
             {documents.length === 0 ? (

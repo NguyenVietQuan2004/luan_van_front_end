@@ -34,12 +34,11 @@ function DocumentActions({ doc, onViewDetail }: { doc: Document; onViewDetail?: 
     navigator.clipboard.writeText(doc._id);
     toast?.success("Đã copy ID") || alert("Đã copy ID");
   };
-
   const handleDelete = async () => {
     if (!confirm("Xác nhận xóa tài liệu này?")) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/documents/${doc._id}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/documents/${doc._id}`, {
         method: "DELETE",
       });
       if (!res.ok) throw new Error(await res.text());
@@ -51,6 +50,21 @@ function DocumentActions({ doc, onViewDetail }: { doc: Document; onViewDetail?: 
     }
   };
 
+  const handleNotify = async () => {
+    if (!confirm(`Gửi thông báo cho tất cả đảng viên về tài liệu "${doc.file_name}"?`)) return;
+
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/documents/${doc._id}/notify`, {
+        method: "POST",
+      });
+
+      if (!res.ok) throw new Error(await res.text());
+
+      toast?.success("✅ Đã gửi thông báo thành công!") || alert("Đã gửi thông báo!");
+    } catch (err: any) {
+      toast?.error("Gửi thất bại: " + err.message) || alert("Gửi thất bại");
+    }
+  };
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -65,6 +79,9 @@ function DocumentActions({ doc, onViewDetail }: { doc: Document; onViewDetail?: 
         <DropdownMenuItem onClick={handleCopyId}>Copy ID</DropdownMenuItem>
         <DropdownMenuItem onClick={() => onViewDetail && onViewDetail(doc)} disabled={!onViewDetail}>
           Xem chi tiết
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={handleNotify} className="text-emerald-600 focus:text-emerald-700">
+          📨 Gửi thông báo cho đảng viên
         </DropdownMenuItem>
         <DropdownMenuItem onClick={handleDelete} className="text-red-600 focus:text-red-700 focus:bg-red-50">
           Xóa
@@ -85,9 +102,10 @@ export const DocumentColumns: ColumnDef<Document>[] = [
     ),
     cell: ({ row }) => {
       const doc = row.original;
+
       return doc.file_path ? (
         <a
-          href={`http://localhost:5000${doc.file_path}`}
+          href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${doc.file_path}`}
           target="_blank"
           rel="noopener noreferrer"
           className="text-indigo-600 hover:underline font-medium line-clamp-1 block max-w-xs"

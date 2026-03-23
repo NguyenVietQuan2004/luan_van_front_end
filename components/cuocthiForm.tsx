@@ -56,7 +56,6 @@ export default function CuocthiForm({ initialData = {}, onSubmit, isNew }: Props
       note: "",
     },
   });
-  console.log(initialData);
   // Reset form + lưu file path cũ khi edit
   useEffect(() => {
     if (!initialData) return;
@@ -90,7 +89,6 @@ export default function CuocthiForm({ initialData = {}, onSubmit, isNew }: Props
 
     // Nếu có file mới upload → append
     if (file) {
-      console.log("ok");
       formData.append("file", file);
     }
 
@@ -189,7 +187,7 @@ export default function CuocthiForm({ initialData = {}, onSubmit, isNew }: Props
                   <div className="mt-2 text-sm text-blue-600">
                     File hiện tại:
                     <a
-                      href={`http://localhost:5000${currentFilePath}`}
+                      href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${currentFilePath}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="underline hover:text-blue-800"

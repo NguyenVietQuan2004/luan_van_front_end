@@ -23,7 +23,6 @@ export default function ApplicantsPage() {
       setLoading(false);
     }
   };
-  console.log(applicants);
   useEffect(() => {
     loadApplicants();
   }, []);

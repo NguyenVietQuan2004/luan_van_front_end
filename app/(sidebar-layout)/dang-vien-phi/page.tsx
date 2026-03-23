@@ -11,7 +11,6 @@ export default function DangVienPhiPage() {
   const [data, setData] = useState<DangVienPhi[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  console.log(data);
   const loadData = async () => {
     setLoading(true);
     setError(null);
@@ -24,7 +23,6 @@ export default function DangVienPhiPage() {
       setLoading(false);
     }
   };
-  console.log(DangVienPhiColumns);
   useEffect(() => {
     loadData();
   }, []);

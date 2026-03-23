@@ -1,7 +1,7 @@
 // lib/api.ts  (tiếp nối phần đảng viên)
 
 import { HeSoLuong } from "@/types/hesoluong";
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
+const API_BASE = process.env.NEXT_PUBLIC_API_ENDPOINT + "/api";
 
 export async function fetchHeSoLuongList(): Promise<HeSoLuong[]> {
   const res = await fetch(`${API_BASE}/hesoluong`, { cache: "no-store" });

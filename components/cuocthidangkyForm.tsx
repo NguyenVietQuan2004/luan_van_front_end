@@ -69,7 +69,7 @@ export default function CuocthidangkyForm({ initialData = {}, onSubmit, isNew }:
   // fetch contests
   useEffect(() => {
     const fetchContests = async () => {
-      const res = await fetch("http://localhost:5000/api/contests");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/contests`);
       const data = await res.json();
       setContests(data);
     };
@@ -79,7 +79,7 @@ export default function CuocthidangkyForm({ initialData = {}, onSubmit, isNew }:
   // fetch party members
   useEffect(() => {
     const fetchMembers = async () => {
-      const res = await fetch("http://localhost:5000/api/dang-vien");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/dang-vien`);
       const data = await res.json();
       setPartyMembers(data);
     };
@@ -128,7 +128,6 @@ export default function CuocthidangkyForm({ initialData = {}, onSubmit, isNew }:
   const input = "bg-white w-full h-[28px] px-2 border border-gray-400 text-[13px]";
   const label = "bg-gray-100 font-medium px-2 py-1 border";
   const td = "border px-2 bg-gray-100 py-2";
-  console.log(initialData);
   if (contests.length === 0 || partyMembers.length === 0) {
     return <div>Loading...</div>;
   }
@@ -268,7 +267,7 @@ export default function CuocthidangkyForm({ initialData = {}, onSubmit, isNew }:
                   <div className="mt-2 text-sm text-blue-600">
                     File hiện tại:{" "}
                     <a
-                      href={`http://localhost:5000${currentCertFile}`}
+                      href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${currentCertFile}`}
                       target="_blank"
                       className="underline hover:text-blue-800"
                     >

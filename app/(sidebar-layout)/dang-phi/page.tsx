@@ -8,8 +8,6 @@ import { fetchDangPhiList } from "@/lib/dangphi";
 import { DataTable } from "@/components/data-table";
 import { DangPhiColumns } from "./table/dangphi-columns";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
-
 export default function DangPhiPage() {
   const [data, setData] = useState<DangPhi[]>([]);
   const [loading, setLoading] = useState(true);
@@ -37,7 +35,7 @@ export default function DangPhiPage() {
 
     setCalculating(true);
     try {
-      const res = await fetch(`${API_BASE}/dangphi/tinh-thang-hien-tai`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/dangphi/tinh-thang-hien-tai`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       });
@@ -64,7 +62,6 @@ export default function DangPhiPage() {
       setCalculating(false);
     }
   };
-  console.log(data);
 
   if (loading) {
     return (

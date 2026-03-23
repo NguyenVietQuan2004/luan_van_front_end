@@ -241,7 +241,7 @@ function StepRow({
         {step.file_url ? (
           <div className="flex flex-col gap-1 text-xs">
             <a
-              href={`http://localhost:5000${step.file_url}`}
+              href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${step.file_url}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:underline"

@@ -28,7 +28,6 @@ export default function EditApplicantPage() {
   }, [id, isNew]);
 
   async function handleSubmit(formData: FormData) {
-    console.log(formData);
     if (isNew) {
       await createApplicant(formData);
     } else {

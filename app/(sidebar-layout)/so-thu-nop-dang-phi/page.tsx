@@ -3,13 +3,10 @@ import * as XLSX from "xlsx";
 import React, { useState, useEffect } from "react";
 import { DangPhi } from "@/types/dangphi";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
-
 export default function SoThuNopDangPhiPage() {
   const [dangPhiList, setDangPhiList] = useState<DangPhi[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
   // Bộ lọc
   const [selectedThang, setSelectedThang] = useState<number>(new Date().getMonth() + 1);
   const [selectedNam, setSelectedNam] = useState<number>(new Date().getFullYear());
@@ -19,7 +16,7 @@ export default function SoThuNopDangPhiPage() {
     setError(null);
     try {
       const res = await fetch(
-        `${API_BASE}/dangphi?nam=${selectedNam}${selectedThang ? `&thang=${selectedThang}` : ""}`,
+        `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/dangphi?nam=${selectedNam}${selectedThang ? `&thang=${selectedThang}` : ""}`,
         {
           cache: "no-store",
         },
