@@ -72,12 +72,12 @@ export default function DangPhiPage() {
   }
 
   return (
-    <div className="text-sm mx-auto p-6 bg-white border border-solid border-[#ccc] rounded-[5px]">
+    <div className="text-sm mx-auto p-6 bg-white  border-[#ccc] rounded-[5px]">
       <div className="flex flex-row justify-between items-center mb-6">
         <div>
           <Link
             href="/dang-phi/new/edit"
-            className="text-[#515151] hover:bg-white/10 transition-all duration-300 border border-[#243f50] p-1.25 px-2 bg-[#F7F7F7] mr-4"
+            className="text-[#515151] hover:bg-white/10 rounded transition-all duration-300 border border-[#243f50] p-1.25 px-2 bg-[#F7F7F7] mr-4"
           >
             Thêm thủ công
           </Link>
@@ -85,7 +85,7 @@ export default function DangPhiPage() {
           <button
             onClick={handleTinhDangPhiThangHienTai}
             disabled={calculating}
-            className="bg-[#3872B2] hover:bg-green-700 text-white p-1.25 px-2 rounded text-[13px] font-medium disabled:opacity-50"
+            className="bg-[#3872B2]  text-white p-1.25 px-2 rounded text-[13px] font-medium disabled:opacity-50"
           >
             {calculating ? "Đang tính cho tất cả..." : "Tính đảng phí tháng hiện tại"}
           </button>

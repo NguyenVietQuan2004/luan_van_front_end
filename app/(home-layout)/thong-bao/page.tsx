@@ -126,7 +126,7 @@ export default function Home() {
           <div className="p-5 border-b border-slate-200">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
               <div>
-                <h1 className="text-xl font-bold text-slate-900">Trích xuất Tài liệu</h1>
+                <h1 className="text-xl font-bold  text-[#232934]">Trích xuất Tài liệu</h1>
                 <p className="text-sm text-slate-600 mt-1">Upload → lấy deadline, tóm tắt, markdown tự động</p>
               </div>
             </div>

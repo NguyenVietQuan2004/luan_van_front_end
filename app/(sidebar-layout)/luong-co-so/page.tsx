@@ -6,6 +6,7 @@ import { LuongCoSo } from "@/types/luongcoso";
 import { fetchLuongCoSoList } from "@/lib/luongcoso";
 import { DataTable } from "@/components/data-table";
 import { LuongCoSoColumns } from "./table/luongcoso-columns";
+import ButtonAddNew from "@/components/ButtonAdd";
 
 export default function LuongCoSoPage() {
   const [data, setData] = useState<LuongCoSo[]>([]);
@@ -38,14 +39,18 @@ export default function LuongCoSoPage() {
   }
 
   return (
-    <div className="text-sm mx-auto p-6 bg-white border border-solid border-[#ccc] rounded-[5px]">
+    <div className="text-sm mx-auto p-6 bg-white  border-[#ccc] rounded-[5px]">
       <div className="flex flex-row justify-between items-start mb-6">
-        <Link
-          href="/luong-co-so/new/edit"
+        {/* <Link
+       
           className="text-[#515151] hover:bg-white/10 transition-all duration-300 border border-[#243f50] p-1.25 px-2 bg-[#F7F7F7]"
         >
           Thêm mới mức lương cơ sở
-        </Link>
+        </Link> */}
+
+        <ButtonAddNew className="" href="/luong-co-so/new/edit">
+          Thêm mới mức lương cơ sở
+        </ButtonAddNew>
       </div>
 
       {error && <p className="text-red-600 mb-4">{error}</p>}

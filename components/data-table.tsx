@@ -62,6 +62,7 @@ export function DataTable<TData, TValue>({
     team_name: "tên",
     ma_ngach: "mã ngạch",
     luong_co_so: "lương cơ sở",
+    name: "tên",
   };
   return (
     // <div className="max-w-287.5 overflow-auto  ">
@@ -101,7 +102,31 @@ export function DataTable<TData, TValue>({
       <div className="rounded-md   font-light bg-white">
         {/* {tableName && <div>{tableName}</div>} */}
 
-        <div className="w-full mb-px bg-linear-to-b from-[#418bdb] to-[#1047a4] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900 shadow-sm">
+        <div
+          className="w-full
+         /* Layout & Text */
+        relative px-6 
+        inline-flex items-center justify-center
+        overflow-hidden
+
+        /* KỸ THUẬT: Tạo background dài gấp đôi chứa cả 2 dải màu */
+        bg-[linear-gradient(to_right,#1E57A3,#2A85C9,#46A9E0,#2A85C9,#1E57A3)]
+         bg-size-[200%_100%]
+        bg-position-[0%_0%]
+
+        /* Đổ bóng Glow từ ảnh gốc */
+        
+        /* HIỆU ỨNG VÀO: Di chuyển background thay vì đổi màu */
+        transition-all duration-700 ease-in-out
+        
+        /* Khi Hover: Đẩy background sang phải 100% để hiện dải màu ngược */
+        hover:bg-position-[100%_0%]
+        hover:shadow-[0_0_15px_rgba(59,130,246,0.8)]
+
+
+        
+        mb-px bg-linear-to-b from-[#418bdb] to-[#1047a4] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900 shadow-sm"
+        >
           {tableName}
         </div>
 

@@ -155,15 +155,12 @@ export default function SoThuNopDangPhiPage() {
     <div className=" mx-auto p-6 bg-white border border-[#ccc] rounded-[5px] text-[13px]">
       {/* Header và bộ lọc */}
       <div className="mb-4">
-        <button
-          onClick={exportExcel}
-          className="bg-[#3872B2] text-white px-4 py-1.5 rounded hover:bg-green-700 text-[13px]"
-        >
+        <button onClick={exportExcel} className="bg-[#3872B2] text-white px-4 py-1.5 rounded  text-[13px]">
           Xuất Excel
         </button>
       </div>
 
-      <div className="w-full text-center font-bold text-[16px] mb-4">SỔ THU, NỘP ĐẢNG PHÍ</div>
+      <div className="w-full text-center font-bold text-[16px] mb-4 text-[#232934]">SỔ THU, NỘP ĐẢNG PHÍ</div>
 
       <div className="flex justify-between items-center mb-6">
         <div className="flex gap-4">

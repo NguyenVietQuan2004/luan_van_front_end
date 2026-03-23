@@ -57,7 +57,7 @@ export default function ApplicantStepsPage() {
   if (!applicant) return <div className="p-6">Không tìm thấy hồ sơ</div>;
 
   return (
-    <div className="container text-sm mx-auto p-6 bg-white border border-[#ccc] rounded-[5px]">
+    <div className="container text-sm mx-auto p-6 bg-white border-[#ccc] rounded-[5px]">
       <div className="">
         <div>
           <div>
@@ -228,7 +228,7 @@ function StepRow({
             <button
               type="button"
               onClick={addKeyValue}
-              className="bg-[#3872B2] text-white px-3 py-1 rounded text-xs hover:bg-green-700"
+              className="bg-[#3872B2] text-white px-3 py-1 rounded text-xs"
               disabled={isSubmitting || !newKey.trim()}
             >
               + Thêm

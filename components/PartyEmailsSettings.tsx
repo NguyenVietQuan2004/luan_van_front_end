@@ -62,10 +62,10 @@ export default function PartyEmailsSettings() {
       />
 
       <div className="flex items-center gap-4">
-        <Button onClick={handleSave} disabled={saving || loading}>
+        <Button onClick={handleSave} disabled={saving || loading} className="rounded bg-[#232934]">
           {saving ? (
             <>
-              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              <Loader2 className="mr-2  h-4 w-4 animate-spin" />
               Đang lưu...
             </>
           ) : (

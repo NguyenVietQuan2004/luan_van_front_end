@@ -6,6 +6,7 @@ import { deleteDangVien, fetchDangVienList } from "@/lib/api";
 import { DangVien } from "@/types/dangvien";
 import { DangVienColumns } from "./table/dangvien-columns";
 import { DataTable } from "@/components/data-table";
+import ButtonAddNew from "@/components/ButtonAdd";
 
 export default function DangVienPage() {
   const [dangviens, setDangviens] = useState<DangVien[]>([]);
@@ -56,12 +57,14 @@ export default function DangVienPage() {
   return (
     <div className="text-sm mx-auto p-6 bg-white border border-solid border-[#ccc] rounded-[5px]">
       <div className="flex flex-row  justify-between items-start mb-6">
-        <Link
+        {/* <Link
           href="/dang-vien/new/edit"
           className=" text-[#515151] hover:bg-white/10 transition-all duration-300 border  border-[#243f50] p-1.25 px-2 bg-[#F7F7F7]"
         >
+        </Link> */}
+        <ButtonAddNew className="" href="/dang-vien/new/edit">
           Thêm mới đảng viên
-        </Link>
+        </ButtonAddNew>
       </div>
       {error && <p className="text-red-600 mb-4">{error}</p>}
       <div className=" text-[#3872b2] text-[13px] w-1/2 leading-relaxed">

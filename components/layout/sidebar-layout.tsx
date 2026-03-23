@@ -50,7 +50,7 @@ export default function SidebarLayout({ children, navItems }: { children: ReactN
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block px-4 py-2 rounded-lg hover:bg-gray-200 ${pathname === item.href ? "bg-[#e6f4ff] text-[#1e5aaa]" : "hover:bg-gray-200"}`}
+                  className={`transition-all duration-300 block px-4 py-2 rounded-lg hover:bg-gray-200 ${pathname === item.href ? "bg-[#e6f4ff] text-[#1e5aaa]" : "hover:bg-gray-200"}`}
                 >
                   {item.label}
                 </Link>

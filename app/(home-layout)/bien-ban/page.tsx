@@ -276,7 +276,30 @@ export default function BienBanFormPage() {
   return (
     <div className="container text-[13px] mx-auto p-4 bg-white border border-[#ccc] rounded-[5px]">
       <form onSubmit={handleSubmit(onSubmit)} className="pb-10">
-        <div className="w-full mb-px mt-2 text-sm bg-linear-to-b from-[#2f6fb3] to-[#0b3d91] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900">
+        <div
+          className="
+          /* Layout & Text */
+        relative px-6 
+        inline-flex items-center justify-center
+        overflow-hidden
+
+        /* KỸ THUẬT: Tạo background dài gấp đôi chứa cả 2 dải màu */
+        bg-[linear-gradient(to_right,#1E57A3,#2A85C9,#46A9E0,#2A85C9,#1E57A3)]
+        bg-size-[200%_100%]
+        bg-position-[0%_0%]
+
+        /* Đổ bóng Glow từ ảnh gốc */
+        shadow-[0_0_5px_rgba(30,60,176,0.5)]
+        
+        /* HIỆU ỨNG VÀO: Di chuyển background thay vì đổi màu */
+        transition-all duration-700 ease-in-out
+        
+        /* Khi Hover: Đẩy background sang phải 100% để hiện dải màu ngược */
+        hover:bg-position-[100%_0%]
+        hover:shadow-[0_0_15px_rgba(59,130,246,0.8)]
+        
+        w-full mb-px mt-2 text-sm bg-linear-to-b from-[#2f6fb3] to-[#0b3d91] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900"
+        >
           Tạo Biên Bản Cuộc Họp
         </div>
 

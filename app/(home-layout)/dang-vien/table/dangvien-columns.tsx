@@ -8,6 +8,12 @@ import { DangVien } from "@/types/dangvien";
 
 export const DangVienColumns: ColumnDef<DangVien>[] = [
   {
+    id: "actions",
+    header: "Hành động",
+    cell: ({ row }) => <DangVienAction data={row.original} />,
+  },
+
+  {
     accessorKey: "so_tt",
     header: "STT",
   },
@@ -54,14 +60,8 @@ export const DangVienColumns: ColumnDef<DangVien>[] = [
     },
   },
 
-  {
-    accessorKey: "tinh_trang_huu_tri",
-    header: "Hưu trí",
-  },
-
-  {
-    id: "actions",
-    header: "Hành động",
-    cell: ({ row }) => <DangVienAction data={row.original} />,
-  },
+  // {
+  //   accessorKey: "tinh_trang_huu_tri",
+  //   header: "Hưu trí",
+  // },
 ];

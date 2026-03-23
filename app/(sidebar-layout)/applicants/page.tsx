@@ -5,6 +5,7 @@ import Link from "next/link";
 import { deleteApplicant, fetchApplicants } from "@/lib/applicant";
 import { Applicant } from "@/lib/applicant";
 import SidebarLayout from "@/components/layout/sidebar-layout";
+import ButtonAddNew from "@/components/ButtonAdd";
 
 export default function ApplicantsPage() {
   const [applicants, setApplicants] = useState<Applicant[]>([]);
@@ -40,15 +41,19 @@ export default function ApplicantsPage() {
   if (loading) return <div className="p-6 text-center">Đang tải...</div>;
 
   return (
-    <div className="container text-sm mx-auto p-6 bg-white border border-[#ccc] rounded-[5px]">
+    <div className="container text-sm mx-auto p-6 bg-white border-[#ccc] rounded-[5px]">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-xl font-bold">Quản lý hồ sơ cảm tình Đảng</h1>
-        <Link
-          href="/applicants/new/edit"
+        <h1 className="text-xl font-bold text-[#232934]">Quản lý hồ sơ cảm tình Đảng</h1>
+        {/* <Link
+         
           className="text-[#515151] hover:bg-white/10 transition-all duration-300 border border-[#243f50] p-1.25 px-3 bg-[#F7F7F7] rounded"
         >
-          + Thêm hồ sơ mới
-        </Link>
+         
+        </Link> */}
+
+        <ButtonAddNew href="/applicants/new/edit" className="text-white">
+          Thêm hồ sơ mới
+        </ButtonAddNew>
       </div>
 
       {error && <p className="text-red-600 mb-4">{error}</p>}
