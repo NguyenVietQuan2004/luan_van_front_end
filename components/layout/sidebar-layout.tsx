@@ -19,7 +19,7 @@ export default function SidebarLayout({ children, navItems }: { children: ReactN
   const [open, setOpen] = useState(true);
   const pathname = usePathname();
   return (
-    <div className={`h-screen flex flex-col bg-[#e7edf4]`}>
+    <div className={`h-screen flex flex-col bg-[#E8F4FF]`}>
       <header className={`h-22.5 bg-[#2d63ad] flex items-center px-6 text-white  ${openSans.className}`}>
         <button onClick={() => setOpen(!open)}>
           <Menu size={24} />
@@ -39,7 +39,7 @@ export default function SidebarLayout({ children, navItems }: { children: ReactN
 
       <div className="flex flex-1 overflow-hidden relative">
         <aside
-          className={`absolute mt-6 rounded-xl left-0 top-0 h-full w-64 bg-white border-r
+          className={`absolute mt-4 rounded-xl left-0 top-0 h-full w-64 bg-white border-r
           transition-transform duration-300
           ${open ? "translate-x-0" : "-translate-x-full"}`}
         >
@@ -60,7 +60,7 @@ export default function SidebarLayout({ children, navItems }: { children: ReactN
         </aside>
 
         <main
-          className={`flex-1 p-6 overflow-auto transition-all duration-300
+          className={`flex-1 p-4 overflow-auto transition-all duration-300
           ${open ? "ml-64" : "ml-0"}`}
         >
           <div className="bg-white rounded-2xl shadow p-6 min-h-full">{children}</div>

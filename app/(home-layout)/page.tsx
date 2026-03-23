@@ -54,8 +54,8 @@ const menuItems = [
 export default function HomePage() {
   return (
     <div className="  bg-white border border-solid border-[#ccc] rounded-[5px]   flex-1 p-3.75 grid grid-cols-1 lg:grid-cols-2 gap-4 text-base">
-      <Card className="bg-white shadow-none border border-[#ccc] rounded-[5px]">
-        <CardContent className="p-3 shadow-none space-y-3">
+      <Card className="bg-white shadow-none ring-0 border border-[#ccc] rounded-[5px]">
+        <CardContent className="p-3 shadow-none  space-y-3">
           <h2 className="font-semibold text-[#3872b2] border-b pb-1">GIỚI THIỆU HỆ THỐNG</h2>
 
           <p className="text-sm text-gray-700 text-justify leading-relaxed">
@@ -102,7 +102,7 @@ export default function HomePage() {
         </CardContent>
       </Card>
 
-      <Card className="bg-white shadow-none border! p-0 border-solid border-[#ccc] rounded-[5px]">
+      <Card className="bg-white shadow-none ring-0 border! p-0 border-solid border-[#ccc] rounded-[5px]">
         <CardContent className="p-1.25 shadow-none">
           <div className="grid grid-cols-2 gap-4">
             {menuItems.map((item) => (
