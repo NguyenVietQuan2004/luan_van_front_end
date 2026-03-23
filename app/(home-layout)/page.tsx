@@ -40,7 +40,7 @@ const menuItems = [
   },
 
   {
-    label: "Thông báo công văn đến các đảng viên thằng này dùng AI chưa deploy được AI",
+    label: "Thông báo công văn đến các đảng viên thằng này dùng AI chưa deploy được AIĐảng phí chưa nộp cấp trên",
     src: "https://icons.iconarchive.com/icons/pelfusion/flat-folder/128/Notification-Folder-icon.png",
     href: "/thong-bao",
   },

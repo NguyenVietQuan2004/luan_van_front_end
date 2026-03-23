@@ -48,7 +48,7 @@ export default function CuocthiPage() {
   }
 
   return (
-    <div className="container text-sm mx-auto p-6 bg-white border border-solid border-[#ccc] rounded-[5px]">
+    <div className="text-sm mx-auto p-6 bg-white border border-solid border-[#ccc] rounded-[5px]">
       <div className="flex flex-row justify-between items-start mb-6">
         <Link
           href="/cuoc-thi/new/edit"

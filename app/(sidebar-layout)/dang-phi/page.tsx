@@ -72,7 +72,7 @@ export default function DangPhiPage() {
   }
 
   return (
-    <div className="container text-sm mx-auto p-6 bg-white border border-solid border-[#ccc] rounded-[5px]">
+    <div className="text-sm mx-auto p-6 bg-white border border-solid border-[#ccc] rounded-[5px]">
       <div className="flex flex-row justify-between items-center mb-6">
         <div>
           <Link

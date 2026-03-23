@@ -59,7 +59,7 @@ export function DataTable<TData, TValue>({
 
   return (
     // <div className="max-w-287.5 overflow-auto  ">
-    <div className="max-w-300 overflow-auto  ">
+    <div className="w-full overflow-auto  ">
       <div className="flex items-center py-4 ">
         <Input
           placeholder={`Lọc theo ${filterField}...`}
