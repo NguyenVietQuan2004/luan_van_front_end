@@ -74,7 +74,7 @@ export default function ApplicantsPage() {
               </td>
               <td className="border px-3 py-2 text-center">
                 <div className="flex gap-3 justify-center">
-                  <Link href={`/applicants/${app._id}/edit`} className="text-blue-600 hover:underline">
+                  <Link href={`/applicants/${app._id}/edit`} className="text-[#3872b2] hover:underline">
                     Sửa
                   </Link>
                   <Link href={`/applicants/${app._id}/steps`} className="text-green-600 hover:underline">

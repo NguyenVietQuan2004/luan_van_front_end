@@ -60,7 +60,7 @@ export default function CuocthiPage() {
 
       {error && <p className="text-red-600 mb-4">{error}</p>}
 
-      <div className="text-[#008000] text-[13px] w-1/2 leading-relaxed mb-6">
+      <div className="text-[#3872b2] text-[13px] w-1/2 leading-relaxed mb-6">
         <p>
           Trang quản lý danh sách cuộc thi. Hỗ trợ thêm/sửa/xóa thông tin cuộc thi, theo dõi thời gian đăng ký, thời
           gian diễn ra, địa điểm, loại hình và quy định cuộc thi.

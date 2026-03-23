@@ -61,7 +61,7 @@ export default function ApplicantStepsPage() {
       <div className="">
         <div>
           <div>
-            <Link href={`/applicants/${applicantId}/edit`} className="text-blue-600 hover:underline">
+            <Link href={`/applicants/${applicantId}/edit`} className="text-[#3872b2] hover:underline">
               ← Quay lại hồ sơ
             </Link>
             <table className="w-100 mt-6 border-collapse border text-[13px]">
@@ -103,7 +103,7 @@ export default function ApplicantStepsPage() {
             <span> / {applicant.steps.length}</span>
           </p>
 
-          <div className="w-full mb-px bg-linear-to-b from-[#2f6fb3] to-[#0b3d91] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900 shadow-sm">
+          <div className="w-full mb-px bg-linear-to-b from-[#2f6fb3] to-[#2857a9] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900 shadow-sm">
             QUẢN LÝ CÁC BƯỚC TRONG CẢM TÌNH ĐẢNG
           </div>
         </div>
@@ -182,7 +182,7 @@ function StepRow({
   return (
     <tr>
       <td className="border px-3 py-2 text-center">
-        <Link href={`/steps/${step.step_id._id}/edit`} className="text-blue-600 underline">
+        <Link href={`/steps/${step.step_id._id}/edit`} className="text-[#3872b2] underline">
           {step.step_id.step_order}
         </Link>
       </td>
@@ -228,7 +228,7 @@ function StepRow({
             <button
               type="button"
               onClick={addKeyValue}
-              className="bg-green-600 text-white px-3 py-1 rounded text-xs hover:bg-green-700"
+              className="bg-[#3872B2] text-white px-3 py-1 rounded text-xs hover:bg-green-700"
               disabled={isSubmitting || !newKey.trim()}
             >
               + Thêm
@@ -244,7 +244,7 @@ function StepRow({
               href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${step.file_url}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-[#3872b2] hover:underline"
             >
               {step.file_name || "Xem file"}
             </a>

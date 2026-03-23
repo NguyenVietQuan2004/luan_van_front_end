@@ -47,8 +47,10 @@ export default function PartyEmailsSettings() {
 
   return (
     <div className="space-y-4 max-w-2xl ml-4">
-      <h2 className="text-lg font-semibold my-4">Email nhận thông báo tài liệu</h2>
-      <p className="text-sm text-slate-500">Nhập các email cách nhau bằng dấu phẩy (ví dụ: a@gmail.com, b@gmail.com)</p>
+      {/* <h2 className="text-lg font-semibold my-4">Email nhận thông báo tài liệu</h2> */}
+      <p className="text-sm text-slate-500 mt-4">
+        Nhập các email cách nhau bằng dấu phẩy (ví dụ: a@gmail.com, b@gmail.com)
+      </p>
 
       <Textarea
         value={emailsStr}
@@ -56,6 +58,7 @@ export default function PartyEmailsSettings() {
         placeholder="mail1@gmail.com, mail2@gmail.com, ..."
         rows={4}
         disabled={loading || saving}
+        className=" ring-0! focus:border! focus:border-black!"
       />
 
       <div className="flex items-center gap-4">

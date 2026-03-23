@@ -95,7 +95,11 @@ export const DocumentColumns: ColumnDef<Document>[] = [
   {
     accessorKey: "file_name",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+      <Button
+        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
         Tên file
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
@@ -125,7 +129,11 @@ export const DocumentColumns: ColumnDef<Document>[] = [
   {
     accessorKey: "uploaded_at",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+      <Button
+        variant="ghost"
+        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
         Upload lúc
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>

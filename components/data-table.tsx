@@ -56,18 +56,24 @@ export function DataTable<TData, TValue>({
     },
     meta,
   });
-
+  const columnLabels: Record<string, string> = {
+    ho_ten: "họ tên",
+    file_name: "tên file",
+    team_name: "tên",
+    ma_ngach: "mã ngạch",
+    luong_co_so: "lương cơ sở",
+  };
   return (
     // <div className="max-w-287.5 overflow-auto  ">
     <div className="w-full overflow-auto  ">
       <div className="flex items-center py-4 ">
         <Input
-          placeholder={`Lọc theo ${filterField}...`}
+          placeholder={`Lọc theo ${columnLabels[filterField]}...`}
           value={(table.getColumn(filterField)?.getFilterValue() as string) ?? ""}
           onChange={(event) => table.getColumn(filterField)?.setFilterValue(event.target.value)}
-          className="max-w-sm bg-white rounded-none ring-0!"
+          className="max-w-xs  focus:border-[#3872b2]! bg-white ring-0! text-[13px] placeholder:text-[13px] border-[#254d79]  rounded-[5px] font-extralight! "
         />
-        <DropdownMenu>
+        {/* <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto rounded-none">
               Columns
@@ -90,22 +96,25 @@ export function DataTable<TData, TValue>({
                 );
               })}
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu> */}
       </div>
       <div className="rounded-md   font-light bg-white">
         {/* {tableName && <div>{tableName}</div>} */}
 
-        <div className="w-full mb-px bg-linear-to-b from-[#2f6fb3] to-[#0b3d91] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900 shadow-sm">
+        <div className="w-full mb-px bg-linear-to-b from-[#418bdb] to-[#1047a4] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900 shadow-sm">
           {tableName}
         </div>
 
-        <Table className="border border-[#80B5D7] aaaaaaaaa">
+        <Table className="border border-[#80B5D7] text-[#232934]">
           <TableHeader className="">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className=" border border-[#80B5D7] bg-[#DAE9F3] ">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead className="min-w-25! border border-[#80B5D7] font-bold! text-black! " key={header.id}>
+                    <TableHead
+                      className="min-w-25! border border-[#80B5D7] font-bold! text-[#232934]! "
+                      key={header.id}
+                    >
                       {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
                     </TableHead>
                   );
@@ -123,7 +132,7 @@ export function DataTable<TData, TValue>({
                 >
                   {row.getVisibleCells().map((cell, index1) => (
                     <TableCell
-                      className={`  border-gray-200 ${index1 == 0 && "bg-[#dae9f3] border-[#80B5D7]"}   border max-w-50  overflow-hidden text-ellipsis whitespace-nowrap `}
+                      className={` py-0.5 border-gray-200 ${index1 == 0 && "bg-[#dae9f3] border-[#80B5D7]"}   border max-w-50  overflow-hidden text-ellipsis whitespace-nowrap `}
                       key={cell.id}
                     >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}

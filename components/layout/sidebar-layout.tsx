@@ -20,7 +20,7 @@ export default function SidebarLayout({ children, navItems }: { children: ReactN
   const pathname = usePathname();
   return (
     <div className={`h-screen flex flex-col bg-[#e7edf4]`}>
-      <header className={`h-16 bg-[#2d63ad] flex items-center px-6 text-white  ${openSans.className}`}>
+      <header className={`h-20 bg-[#2d63ad] flex items-center px-6 text-white  ${openSans.className}`}>
         <button onClick={() => setOpen(!open)}>
           <Menu size={24} />
         </button>

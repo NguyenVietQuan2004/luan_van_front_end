@@ -3,17 +3,17 @@ import Link from "next/link";
 
 const menuItems = [
   {
-    label: "Báo cáo thằng này chưa code",
+    label: "Báo cáo",
     src: "https://dkmh.ctu.edu.vn/htql/sinhvien/images/phanhe/korganizer.png",
     href: "/bao-cao",
   },
   {
-    label: "Nghị quyết thằng này chưa code",
+    label: "Nghị quyết",
     src: "https://dkmh.ctu.edu.vn/htql/sinhvien/images/phanhe/hetinchi.gif",
     href: "/nghi-quyet",
   },
   {
-    label: "Trích xuất thông tin lý lịch thằng này chưa code",
+    label: "Trích xuất thông tin lý lịch",
     src: "https://icons.iconarchive.com/icons/trayse101/photoshop-filetypes/128/profile-icon.png",
     href: "/trich-xuat",
   },
@@ -40,12 +40,12 @@ const menuItems = [
   },
 
   {
-    label: "Thông báo công văn đến các đảng viên thằng này dùng AI chưa deploy được AIĐảng phí chưa nộp cấp trên",
+    label: "Thông báo công văn đến các đảng viên",
     src: "https://icons.iconarchive.com/icons/pelfusion/flat-folder/128/Notification-Folder-icon.png",
     href: "/thong-bao",
   },
   {
-    label: "Tạo biên bản, cuộc họp thằng này dùng AI chưa deploy được AI",
+    label: "Tạo biên bản, cuộc họp",
     src: "https://icons.iconarchive.com/icons/dakirby309/simply-styled/128/Microsoft-Word-2013-icon.png",
     href: "/bien-ban",
   },
@@ -56,7 +56,7 @@ export default function HomePage() {
     <div className="  bg-white border border-solid border-[#ccc] rounded-[5px]   flex-1 p-3.75 grid grid-cols-1 lg:grid-cols-2 gap-4 text-base">
       <Card className="bg-white shadow-none border border-[#ccc] rounded-[5px]">
         <CardContent className="p-3 shadow-none space-y-3">
-          <h2 className="font-semibold text-blue-700 border-b pb-1">GIỚI THIỆU HỆ THỐNG</h2>
+          <h2 className="font-semibold text-[#3872b2] border-b pb-1">GIỚI THIỆU HỆ THỐNG</h2>
 
           <p className="text-sm text-gray-700 text-justify leading-relaxed">
             Trong quá trình thực hiện các nhiệm vụ chuyên môn và quản lý, giảng viên thường phải đảm nhiệm nhiều hoạt
@@ -71,7 +71,7 @@ export default function HomePage() {
           </p>
 
           <div>
-            <h3 className="font-semibold text-blue-700 mb-1">Mục tiêu chính</h3>
+            <h3 className="font-semibold text-[#3872b2] mb-1">Mục tiêu chính</h3>
             <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1">
               <li>Quản lý tập trung thông tin đảng viên và cảm tình Đảng</li>
               <li>Tự động hóa xử lý hồ sơ và dữ liệu hành chính</li>
@@ -81,7 +81,7 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-blue-700 mb-1">Chức năng nổi bật</h3>
+            <h3 className="font-semibold text-[#3872b2] mb-1">Chức năng nổi bật</h3>
             <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1">
               <li>Quản lý thông tin đảng viên, cảm tình Đảng</li>
               <li>Quản lý báo cáo, nghị quyết, sinh hoạt chi bộ</li>
@@ -91,7 +91,7 @@ export default function HomePage() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-blue-700 mb-1">Ứng dụng trí tuệ nhân tạo</h3>
+            <h3 className="font-semibold text-[#3872b2] mb-1">Ứng dụng trí tuệ nhân tạo</h3>
             <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1">
               <li>Tự động trích xuất thông tin từ file lý lịch</li>
               <li>Chuẩn hóa dữ liệu và lưu trữ có cấu trúc</li>

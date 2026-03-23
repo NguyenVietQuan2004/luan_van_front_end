@@ -152,12 +152,12 @@ export default function SoThuNopDangPhiPage() {
   if (error) return <div className="p-6 text-red-600">{error}</div>;
 
   return (
-    <div className="container mx-auto p-6 bg-white border border-[#ccc] rounded-[5px] text-[13px]">
+    <div className=" mx-auto p-6 bg-white border border-[#ccc] rounded-[5px] text-[13px]">
       {/* Header và bộ lọc */}
       <div className="mb-4">
         <button
           onClick={exportExcel}
-          className="bg-green-600 text-white px-4 py-1.5 rounded hover:bg-green-700 text-[13px]"
+          className="bg-[#3872B2] text-white px-4 py-1.5 rounded hover:bg-green-700 text-[13px]"
         >
           Xuất Excel
         </button>
@@ -302,7 +302,7 @@ export default function SoThuNopDangPhiPage() {
         <div className="font-bold mb-2">PHẦN II: TỔNG HỢP THU, NỘP ĐẢNG PHÍ HÀNG THÁNG - Mẫu sổ S01/ĐP</div>
         <div className="font-semibold">NĂM: {selectedNam}</div>
 
-        <table className="w-full border-collapse border mt-4">
+        <table className="w-full border-collapse  mt-4">
           <thead>
             <tr>
               <th className={th} rowSpan={2}>
@@ -317,7 +317,7 @@ export default function SoThuNopDangPhiPage() {
               <th className={th} colSpan={4}>
                 Tình hình đảng phí
               </th>
-              <th className={th} colSpan={3}>
+              <th className={th} colSpan={2}>
                 Nộp đảng phí lên cấp trên
               </th>
               {/* <th className={th} rowSpan={2}>
@@ -339,6 +339,7 @@ export default function SoThuNopDangPhiPage() {
             {tongHopTheoThang.map((m) => (
               <tr key={m.thang}>
                 {/* <td className={td}></td> ngày nộp */}
+                <td className={td}>Tháng {m.thang}</td>
                 <td className={td}>Tháng {m.thang}</td>
                 <td className={td}>{m.soDangVien}</td>
                 <td className={td}>{m.soMien}</td>
@@ -372,7 +373,6 @@ export default function SoThuNopDangPhiPage() {
                 <td className={td}>{q.data.phaiNop.toLocaleString("vi-VN")}</td>
                 <td className={td}>{q.data.daNop.toLocaleString("vi-VN")}</td>
                 <td className={td}>{q.data.chuaNop.toLocaleString("vi-VN")}</td>
-                <td className={td}></td>
               </tr>
             ))}
           </tbody>

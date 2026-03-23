@@ -73,7 +73,7 @@ export default function StepsPage() {
                   <a
                     href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${step.template_file}`}
                     target="_blank"
-                    className="text-blue-600 hover:underline"
+                    className="text-[#3872b2] hover:underline"
                   >
                     Xem file
                   </a>
@@ -84,7 +84,7 @@ export default function StepsPage() {
               <td className="border px-3 py-2">{step.note || "-"}</td>
               <td className="border px-3 py-2 text-center">
                 <div className="flex gap-3 justify-center">
-                  <Link href={`/steps/${step._id}/edit`} className="text-blue-600 hover:underline">
+                  <Link href={`/steps/${step._id}/edit`} className="text-[#3872b2] hover:underline">
                     Sửa
                   </Link>
                   <button onClick={() => handleDelete(step._id)} className="text-red-600 hover:underline">

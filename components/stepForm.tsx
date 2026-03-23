@@ -132,7 +132,7 @@ export default function StepForm({ initialData = {}, onSubmit, isNew }: Props) {
                 />
                 {fileName && <p className="text-green-600 text-xs mt-1">Đã chọn: {fileName}</p>}
                 {existingFile && !fileName && (
-                  <p className="text-blue-600 text-xs mt-1">File hiện tại: {existingFile.split("/").pop()}</p>
+                  <p className="text-[#3872b2] text-xs mt-1">File hiện tại: {existingFile.split("/").pop()}</p>
                 )}
               </td>
             </tr>

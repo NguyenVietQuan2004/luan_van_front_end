@@ -264,12 +264,12 @@ export default function CuocthidangkyForm({ initialData = {}, onSubmit, isNew }:
 
                 {/* file hiện tại */}
                 {currentCertFile && !file && (
-                  <div className="mt-2 text-sm text-blue-600">
+                  <div className="mt-2 text-sm text-[#3872b2]">
                     File hiện tại:{" "}
                     <a
                       href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${currentCertFile}`}
                       target="_blank"
-                      className="underline hover:text-blue-800"
+                      className="underline hover:text-[#3872b2]"
                     >
                       {currentCertFile.split("/").pop()}
                     </a>

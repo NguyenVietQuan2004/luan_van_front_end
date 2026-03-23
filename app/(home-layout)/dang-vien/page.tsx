@@ -64,7 +64,7 @@ export default function DangVienPage() {
         </Link>
       </div>
       {error && <p className="text-red-600 mb-4">{error}</p>}
-      <div className=" text-[#008000] text-[13px] w-1/2 leading-relaxed">
+      <div className=" text-[#3872b2] text-[13px] w-1/2 leading-relaxed">
         <p>
           Trang quản lý danh sách đảng viên Bộ môn Khoa học Máy tính. Hệ thống hỗ trợ thêm/sửa/xóa thông tin đảng viên,
           theo dõi ngày vào Đảng, tình trạng hưu trí và các thông tin liên quan.

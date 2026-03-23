@@ -9,7 +9,11 @@ export const CuocthiColumns = (onDelete: (id: string) => void): ColumnDef<any>[]
   {
     accessorKey: "name",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+      <Button
+        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
         Tên cuộc thi
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>

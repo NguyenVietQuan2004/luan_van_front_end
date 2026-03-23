@@ -58,7 +58,7 @@ export default function CuocthidangkyPage() {
 
       {error && <p className="text-red-600 mb-4">{error}</p>}
 
-      <div className="text-[#008000] text-[13px] w-1/2 leading-relaxed mb-6">
+      <div className="text-[#3872b2] text-[13px] w-1/2 leading-relaxed mb-6">
         <p>
           Trang quản lý danh sách đăng ký tham gia cuộc thi của đảng viên. Hỗ trợ thêm/sửa/xóa đăng ký, theo dõi thành
           viên, trạng thái duyệt, kết quả thi và chứng nhận.

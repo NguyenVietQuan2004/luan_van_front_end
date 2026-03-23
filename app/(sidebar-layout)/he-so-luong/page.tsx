@@ -50,7 +50,7 @@ export default function HeSoLuongPage() {
 
       {error && <p className="text-red-600 mb-4">{error}</p>}
 
-      <div className="text-[#008000] text-[13px] w-1/2 leading-relaxed mb-6">
+      <div className="text-[#3872b2] text-[13px] w-1/2 leading-relaxed mb-6">
         <p>
           Trang quản lý bảng hệ số lương theo ngạch và bậc. Dữ liệu dùng để tính lương, đảng phí và các khoản liên quan.
         </p>

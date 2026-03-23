@@ -79,13 +79,13 @@ export default function DangPhiPage() {
             href="/dang-phi/new/edit"
             className="text-[#515151] hover:bg-white/10 transition-all duration-300 border border-[#243f50] p-1.25 px-2 bg-[#F7F7F7] mr-4"
           >
-            Thêm thủ công (nếu cần)
+            Thêm thủ công
           </Link>
 
           <button
             onClick={handleTinhDangPhiThangHienTai}
             disabled={calculating}
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded text-[13px] font-medium disabled:opacity-50"
+            className="bg-[#3872B2] hover:bg-green-700 text-white p-1.25 px-2 rounded text-[13px] font-medium disabled:opacity-50"
           >
             {calculating ? "Đang tính cho tất cả..." : "Tính đảng phí tháng hiện tại"}
           </button>
@@ -94,7 +94,7 @@ export default function DangPhiPage() {
 
       {error && <p className="text-red-600 mb-4">{error}</p>}
 
-      <div className="text-[#008000] text-[13px] w-1/2 leading-relaxed mb-6">
+      <div className="text-[#3872b2] text-[13px] w-1/2 leading-relaxed mb-6">
         <p>
           Trang quản lý đảng phí hàng tháng. Click nút "Tính đảng phí tháng hiện tại" để tự động tính và tạo bản ghi cho
           tất cả đảng viên. Tháng/năm hiện tại: {new Date().getMonth() + 1}/{new Date().getFullYear()}

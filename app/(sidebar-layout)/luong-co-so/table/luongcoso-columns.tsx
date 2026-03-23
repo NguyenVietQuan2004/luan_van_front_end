@@ -10,7 +10,11 @@ export const LuongCoSoColumns: ColumnDef<LuongCoSo>[] = [
   {
     accessorKey: "ngay_bat_dau",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+      <Button
+        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
         Ngày bắt đầu
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
@@ -32,6 +36,10 @@ export const LuongCoSoColumns: ColumnDef<LuongCoSo>[] = [
     accessorKey: "luong_co_so",
     header: "Lương cơ sở (đồng)",
     cell: ({ row }) => row.original.luong_co_so.toLocaleString("vi-VN"),
+    filterFn: (row, columnId, value) => {
+      const rowValue = row.getValue(columnId);
+      return String(rowValue).includes(value);
+    },
   },
   {
     id: "actions",

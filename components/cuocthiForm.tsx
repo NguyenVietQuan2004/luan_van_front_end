@@ -184,13 +184,13 @@ export default function CuocthiForm({ initialData = {}, onSubmit, isNew }: Props
                   className="text-sm text-gray-700 file:mr-4 file:py-1 file:px-3 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-[#F7F7F7] file:text-[#515151]  file:border-[#243f50] hover:file:bg-[#e0e0e0]"
                 />
                 {currentFilePath && !file && (
-                  <div className="mt-2 text-sm text-blue-600">
+                  <div className="mt-2 text-sm text-[#3872b2]">
                     File hiện tại:
                     <a
                       href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${currentFilePath}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline hover:text-blue-800"
+                      className="underline hover:text-[#3872b2]"
                     >
                       {currentFilePath.split("/").pop()}
                     </a>

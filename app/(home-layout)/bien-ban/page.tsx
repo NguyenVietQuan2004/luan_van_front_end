@@ -426,7 +426,7 @@ export default function BienBanFormPage() {
             <p className="text-green-700 font-medium mb-3 text-[14px]">Biên bản đã được tạo thành công!</p>
             <button
               onClick={handleDownload}
-              className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg shadow transition"
+              className="inline-flex items-center px-6 py-3 bg-[#3872B2] hover:bg-green-700 text-white font-medium rounded-lg shadow transition"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path

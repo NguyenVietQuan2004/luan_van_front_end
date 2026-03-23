@@ -10,7 +10,11 @@ export const HeSoLuongColumns: ColumnDef<HeSoLuong>[] = [
   {
     accessorKey: "ma_ngach",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+      <Button
+        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
         Mã ngạch
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>

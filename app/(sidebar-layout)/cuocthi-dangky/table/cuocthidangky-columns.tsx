@@ -9,7 +9,11 @@ export const CuocthidangkyColumns = (onDelete: (id: string) => void): ColumnDef<
   {
     accessorKey: "contest_id.name",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+      <Button
+        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
         Tên cuộc thi
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>
@@ -34,7 +38,7 @@ export const CuocthidangkyColumns = (onDelete: (id: string) => void): ColumnDef<
         registered: "text-yellow-600",
         approved: "text-green-600",
         rejected: "text-red-600",
-        completed: "text-blue-600",
+        completed: "text-[#3872b2]",
       } as any;
       return <span className={colors[status] || ""}>{status}</span>;
     },

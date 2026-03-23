@@ -16,7 +16,11 @@ export const DangVienPhiColumns: ColumnDef<DangVienPhi>[] = [
     id: "ho_ten",
     accessorKey: "dang_vien_id.ho_ten",
     header: ({ column }) => (
-      <Button variant="ghost" onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}>
+      <Button
+        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+      >
         Họ tên đảng viên
         <ArrowUpDown className="ml-2 h-4 w-4" />
       </Button>

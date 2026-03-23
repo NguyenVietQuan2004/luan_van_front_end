@@ -235,8 +235,8 @@ export default function Home() {
                     <p className="text-xl font-bold text-emerald-800">{formatDeadline(selectedDoc.deadline)}</p>
                   </div>
                   <div className="bg-blue-50 p-5 rounded-lg border border-blue-100">
-                    <div className="text-sm font-medium text-blue-700 mb-1">Upload</div>
-                    <p className="text-xl font-bold text-blue-800">{formatDate(selectedDoc.uploaded_at)}</p>
+                    <div className="text-sm font-medium text-[#3872b2] mb-1">Upload</div>
+                    <p className="text-xl font-bold text-[#3872b2] ">{formatDate(selectedDoc.uploaded_at)}</p>
                   </div>
                 </div>
 
