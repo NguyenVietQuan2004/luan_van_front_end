@@ -3,17 +3,17 @@ import Link from "next/link";
 
 const menuItems = [
   {
-    label: "Báo cáo",
+    label: "Báo cáo thằng này chưa code",
     src: "https://dkmh.ctu.edu.vn/htql/sinhvien/images/phanhe/korganizer.png",
     href: "/bao-cao",
   },
   {
-    label: "Nghị quyết",
+    label: "Nghị quyết thằng này chưa code",
     src: "https://dkmh.ctu.edu.vn/htql/sinhvien/images/phanhe/hetinchi.gif",
     href: "/nghi-quyet",
   },
   {
-    label: "Trích xuất thông tin lý lịch",
+    label: "Trích xuất thông tin lý lịch thằng này chưa code",
     src: "https://icons.iconarchive.com/icons/trayse101/photoshop-filetypes/128/profile-icon.png",
     href: "/trich-xuat",
   },
@@ -40,12 +40,12 @@ const menuItems = [
   },
 
   {
-    label: "Thông báo công văn đến các đảng viên",
+    label: "Thông báo công văn đến các đảng viên thằng này dùng AI chưa deploy được AI",
     src: "https://icons.iconarchive.com/icons/pelfusion/flat-folder/128/Notification-Folder-icon.png",
     href: "/thong-bao",
   },
   {
-    label: "Tạo biên bản, cuộc họp",
+    label: "Tạo biên bản, cuộc họp thằng này dùng AI chưa deploy được AI",
     src: "https://icons.iconarchive.com/icons/dakirby309/simply-styled/128/Microsoft-Word-2013-icon.png",
     href: "/bien-ban",
   },
