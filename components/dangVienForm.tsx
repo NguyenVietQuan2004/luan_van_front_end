@@ -74,7 +74,8 @@ export default function DangVienForm({ initialData = {}, onSubmit, isNew }: Prop
 
     form.reset({
       ...initialData,
-
+      email: initialData.email || "",
+      la_cam_tinh_dang: initialData.la_cam_tinh_dang ?? false,
       ngay_sinh: toDateInput(initialData.ngay_sinh),
       ngay_vao_dang: toDateInput(initialData.ngay_vao_dang),
       ngay_vao_dang_chinh_thuc: toDateInput(initialData.ngay_vao_dang_chinh_thuc),
@@ -203,6 +204,20 @@ export default function DangVienForm({ initialData = {}, onSubmit, isNew }: Prop
                   <option value="Nam">Nam</option>
                   <option value="Nữ">Nữ</option>
                 </select>
+              </td>
+            </tr>
+            <tr>
+              <td className={label}>Email</td>
+              <td className={td}>
+                <input type="email" {...register("email")} className={input} placeholder="example@gmail.com" />
+              </td>
+
+              <td className={label}>Là cảm tình Đảng</td>
+              <td className={td}>
+                <label className="flex items-center gap-2 cursor-pointer">
+                  <input type="checkbox" {...register("la_cam_tinh_dang")} className="w-4 h-4 accent-blue-600" />
+                  <span className="text-[13px]">Có</span>
+                </label>
               </td>
             </tr>
             <tr>

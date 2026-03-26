@@ -33,6 +33,8 @@ export interface TrinhDo {
 
 export interface DangVien {
   _id: string;
+  email?: string;
+  la_cam_tinh_dang?: boolean;
   so_tt?: number;
   ho_ten: string;
   ho_ten_khai_sinh?: string;
@@ -100,6 +102,9 @@ const thongTinKhacSchema = z.object({
 });
 
 export const dangVienSchema = z.object({
+  email: z.string().email("Email không hợp lệ").optional().or(z.literal("")),
+  la_cam_tinh_dang: z.boolean().default(false).optional(),
+
   so_tt: z.number().int().positive().optional(),
   ho_ten: z.string().min(1, "Họ tên bắt buộc"),
   ho_ten_khai_sinh: z.string().optional(),

@@ -183,7 +183,7 @@ export default function Home() {
             )}
           </div>
 
-          <PartyEmailsSettings />
+          {/* <PartyEmailsSettings /> */}
           {/* Lịch sử DataTable ngay bên dưới, không có khoảng trống thừa */}
           <div className="p-4">
             {documents.length === 0 ? (
