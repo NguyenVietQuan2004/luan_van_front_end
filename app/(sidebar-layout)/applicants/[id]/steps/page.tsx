@@ -71,7 +71,7 @@ export default function ApplicantStepsPage() {
                   <td className="bg-gray-100 font-medium px-3 py-2 border w-1/3">Họ và tên</td>
                   <td className="border px-3 py-2">
                     <div className="flex items-center justify-between">
-                      <span>{applicant.name}</span>
+                      <span>{applicant.dang_vien_id.ho_ten}</span>
                     </div>
                   </td>
                 </tr>
@@ -80,8 +80,8 @@ export default function ApplicantStepsPage() {
                 <tr>
                   <td className="bg-gray-100 font-medium px-3 py-2 border">Ngày sinh</td>
                   <td className="border px-3 py-2">
-                    {applicant?.dob
-                      ? new Date(applicant.dob).toLocaleDateString("vi-VN", {
+                    {applicant?.dang_vien_id.ngay_sinh
+                      ? new Date(applicant.dang_vien_id.ngay_sinh).toLocaleDateString("vi-VN", {
                           day: "2-digit",
                           month: "2-digit",
                           year: "numeric",
@@ -92,7 +92,7 @@ export default function ApplicantStepsPage() {
 
                 <tr>
                   <td className="bg-gray-100 font-medium px-3 py-2 border">Giới tính</td>
-                  <td className="border px-3 py-2">{applicant?.gender || "-"}</td>
+                  <td className="border px-3 py-2">{applicant?.dang_vien_id.gioi_tinh || "-"}</td>
                 </tr>
               </tbody>
             </table>

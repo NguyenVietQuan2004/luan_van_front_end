@@ -36,7 +36,7 @@ const menuItems = [
   {
     label: "Cuộc thi",
     src: "https://icons.iconarchive.com/icons/treetog/junior/128/folder-blue-award-icon.png",
-    href: "/cuocthi-dangky",
+    href: "/cuoc-thi",
   },
 
   {

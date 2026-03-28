@@ -173,7 +173,7 @@ export default function DangPhiForm({ initialData = {}, onSubmit, isNew }: Props
             </tr>
 
             <tr>
-              <td className={label}>Truy thu (nếu có)</td>
+              <td className={label}>Truy thu (nếu có) viết liền không dấu(,.)</td>
               <td className={td} colSpan={3}>
                 <input
                   type="number"
@@ -186,7 +186,7 @@ export default function DangPhiForm({ initialData = {}, onSubmit, isNew }: Props
               </td>
             </tr>
             <tr>
-              <td className={label}>Đã thu (nếu có)</td>
+              <td className={label}>Đã thu (nếu có) viết liền không dấu(,.)</td>
               <td className={td} colSpan={3}>
                 <input
                   type="number"

@@ -8,11 +8,6 @@ import DangVienPhiAction from "./dangvienphi-action";
 
 export const DangVienPhiColumns: ColumnDef<DangVienPhi>[] = [
   {
-    id: "actions",
-    header: "Hành động",
-    cell: ({ row }) => <DangVienPhiAction data={row.original} />,
-  },
-  {
     id: "ho_ten",
     accessorKey: "dang_vien_id.ho_ten",
     header: ({ column }) => (
@@ -51,5 +46,10 @@ export const DangVienPhiColumns: ColumnDef<DangVienPhi>[] = [
     accessorKey: "pc_tham_nien_nha_giao",
     header: "HS PCTN",
     cell: ({ row }) => row.original.pc_tham_nien_nha_giao.toFixed(2),
+  },
+  {
+    id: "actions",
+    header: "Hành động",
+    cell: ({ row }) => <DangVienPhiAction data={row.original} />,
   },
 ];

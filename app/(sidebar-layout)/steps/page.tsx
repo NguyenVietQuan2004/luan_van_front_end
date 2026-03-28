@@ -41,7 +41,7 @@ export default function StepsPage() {
   if (loading) return <div className="p-6 text-center">Đang tải...</div>;
 
   return (
-    <div className="container text-sm mx-auto p-6 bg-white border-[#ccc] rounded-[5px]">
+    <div className=" text-sm mx-auto p-6 bg-white border-[#ccc] rounded-[5px]">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-xl font-bold text-[#232934]">Quản lý các bước cảm tình Đảng</h1>
         {/* <Link
@@ -75,7 +75,8 @@ export default function StepsPage() {
               <td className="border px-3 py-2">
                 {step.template_file ? (
                   <a
-                    href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${step.template_file}`}
+                    // href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${step.template_file}`}
+                    href={`${process.env.NEXT_PUBLIC_API_ENDPOINT}${encodeURI(step.template_file)}`}
                     target="_blank"
                     className="text-[#3872b2] hover:underline"
                   >

@@ -62,10 +62,10 @@ export default function DangPhiPage() {
       setCalculating(false);
     }
   };
-
+  console.log(data);
   if (loading) {
     return (
-      <div className="container mx-auto p-6 text-center">
+      <div className=" mx-auto p-6 text-center">
         <p className="text-lg">Đang tải danh sách đảng phí...</p>
       </div>
     );
@@ -79,7 +79,7 @@ export default function DangPhiPage() {
             href="/dang-phi/new/edit"
             className="text-[#515151] hover:bg-white/10 rounded transition-all duration-300 border border-[#243f50] p-1.25 px-2 bg-[#F7F7F7] mr-4"
           >
-            Thêm thủ công
+            Tính cho từng đảng viên
           </Link>
 
           <button
@@ -87,7 +87,7 @@ export default function DangPhiPage() {
             disabled={calculating}
             className="bg-[#3872B2]  text-white p-1.25 px-2 rounded text-[13px] font-medium disabled:opacity-50"
           >
-            {calculating ? "Đang tính cho tất cả..." : "Tính đảng phí tháng hiện tại"}
+            {calculating ? "Đang tính cho tất cả..." : "Tính đảng phí tháng hiện tại cho tất cả đảng viên"}
           </button>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function DangPhiPage() {
         </p>
       </div>
 
-      <DataTable columns={DangPhiColumns} data={data} filterField="ho_ten" tableName="Danh sách Đảng phí" />
+      <DataTable columns={DangPhiColumns} data={data} filterField="thoiGian" tableName="Danh sách Đảng phí" />
     </div>
   );
 }

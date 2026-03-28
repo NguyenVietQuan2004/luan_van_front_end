@@ -296,7 +296,9 @@ export default function CuocthidangkyForm({ initialData = {}, onSubmit, isNew }:
           <button
             type="button"
             onClick={() => router.back()}
-            className="px-8 py-3 cursor-pointer text-white hover:opacity-75 rounded-lg bg-[#3872B2] border border-[#80B5D7] text-[14px] font-bold"
+            className="px-8 py-3 cursor-pointer hover:opacity-75 rounded-lg  underline border-[#80B5D7] text-[14px]"
+
+            // className="px-8 py-3 cursor-pointer text-white hover:opacity-75 rounded-lg bg-[#3872B2] border border-[#80B5D7] text-[14px] font-bold"
           >
             Quay lại
           </button>

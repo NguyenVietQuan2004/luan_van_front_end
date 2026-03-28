@@ -30,7 +30,7 @@ export default function DangVienPhiPage() {
 
   if (loading) {
     return (
-      <div className="container mx-auto p-6 text-center">
+      <div className=" mx-auto p-6 text-center">
         <p className="text-lg">Đang tải danh sách đảng viên phí...</p>
       </div>
     );

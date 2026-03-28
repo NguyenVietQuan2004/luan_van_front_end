@@ -33,7 +33,7 @@ export default function LuongCoSoForm({ initialData = {}, onSubmit, isNew }: Pro
     defaultValues: {
       ngay_bat_dau: "",
       ngay_ket_thuc: null,
-      luong_co_so: 1800000,
+      luong_co_so: 2340000,
     },
   });
 
@@ -44,7 +44,7 @@ export default function LuongCoSoForm({ initialData = {}, onSubmit, isNew }: Pro
         ngay_ket_thuc: initialData.ngay_ket_thuc
           ? new Date(initialData.ngay_ket_thuc).toISOString().split("T")[0]
           : null,
-        luong_co_so: initialData.luong_co_so || 1800000,
+        luong_co_so: initialData.luong_co_so || 2340000,
       });
     }
   }, [initialData, reset]);

@@ -24,18 +24,24 @@ import {
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
   data: TData[];
-  filterField: string;
+  filterField?: string;
   tableName?: string;
   meta?: any;
+  tableKey?: string;
 }
 import { Button } from "@/components/ui/button";
+import { useTableFilter } from "@/hooks/useTableFilter";
 export function DataTable<TData, TValue>({
   columns,
   data,
   filterField,
-  tableName,
+  tableName = "default",
+  tableKey,
   meta,
 }: DataTableProps<TData, TValue>) {
+  const filterStorageKey = tableKey || tableName;
+  const { globalFilter, setGlobalFilter } = useTableFilter(filterStorageKey);
+
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});
@@ -53,7 +59,10 @@ export function DataTable<TData, TValue>({
       sorting,
       columnFilters,
       columnVisibility,
+      globalFilter,
     },
+    onGlobalFilterChange: setGlobalFilter, // ← Kết nối với state
+    globalFilterFn: "includesString", // hoặc "fuzzy" nếu có extension
     meta,
   });
   const columnLabels: Record<string, string> = {
@@ -63,17 +72,42 @@ export function DataTable<TData, TValue>({
     ma_ngach: "mã ngạch",
     luong_co_so: "lương cơ sở",
     name: "tên",
+    thang: "tháng",
+    thoiGian: "thời gian",
   };
   return (
     // <div className="max-w-287.5 overflow-auto  ">
     <div className="w-full overflow-auto  ">
       <div className="flex items-center py-4 ">
-        <Input
-          placeholder={`Lọc theo ${columnLabels[filterField]}...`}
-          value={(table.getColumn(filterField)?.getFilterValue() as string) ?? ""}
-          onChange={(event) => table.getColumn(filterField)?.setFilterValue(event.target.value)}
-          className="max-w-xs  focus:border-[#3872b2]! bg-white ring-0! text-[13px] placeholder:text-[13px] border-[#254d79]  rounded-[5px] font-extralight! "
-        />
+        {/* {filterField && (
+          <Input
+            placeholder={`Lọc theo ${columnLabels[filterField]}...`}
+            value={(table.getColumn(filterField)?.getFilterValue() as string) ?? ""}
+            onChange={(event) => table.getColumn(filterField)?.setFilterValue(event.target.value)}
+            className="max-w-xs  focus:border-[#3872b2]! bg-white ring-0! text-[13px] placeholder:text-[13px] border-[#254d79]  rounded-[5px] font-extralight! "
+          />
+        )} */}
+        <div className="flex items-center py-4 gap-4">
+          {filterField && (
+            <Input
+              placeholder={`Lọc theo ${columnLabels[filterField] || filterField}...`}
+              value={globalFilter}
+              onChange={(event) => setGlobalFilter(event.target.value)}
+              className="max-w-xs ring-0! focus:border-[#3872b2] bg-white ring-0 text-[13px] placeholder:text-[13px] border-[#254d79] rounded-[5px]"
+            />
+          )}
+
+          {globalFilter && (
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setGlobalFilter("")}
+              className="text-gray-500 p-1 hover:text-red-600"
+            >
+              Xóa lọc
+            </Button>
+          )}
+        </div>
         {/* <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto rounded-none">

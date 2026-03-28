@@ -17,9 +17,15 @@ export interface ApplicantStep {
 
 export interface Applicant {
   _id: string;
-  name: string;
-  dob?: string; // ISO string
-  gender?: string;
+  dang_vien_id: {
+    _id: string;
+    so_tt: number;
+    ho_ten: string;
+    email?: string;
+    ngay_sinh?: string;
+    gioi_tinh?: string;
+    la_cam_tinh_dang: boolean;
+  };
   steps: ApplicantStep[];
   createdAt?: string;
   updatedAt?: string;

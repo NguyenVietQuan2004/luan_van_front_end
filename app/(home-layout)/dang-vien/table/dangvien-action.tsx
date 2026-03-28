@@ -21,7 +21,7 @@ import { deleteDangVien } from "@/lib/api";
 export default function DangVienAction({ data }: { data: DangVien }) {
   const [open, setOpen] = useState(false);
   const router = useRouter();
-
+  console.log(data);
   const onCopy = () => {
     navigator.clipboard.writeText(data._id!);
     toast("Đã copy ID");
