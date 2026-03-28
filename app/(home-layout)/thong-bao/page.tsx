@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Loader2 } from "lucide-react";
 import { DataTable } from "@/components/data-table";
 import { DocumentColumns } from "./table/document-columns";
-import PartyEmailsSettings from "@/components/PartyEmailsSettings";
 
 interface ExtractionResult {
   markdown: string | null;

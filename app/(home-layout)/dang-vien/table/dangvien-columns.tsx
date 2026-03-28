@@ -58,8 +58,4 @@ export const DangVienColumns: ColumnDef<DangVien>[] = [
     header: "Hành động",
     cell: ({ row }) => <DangVienAction data={row.original} />,
   },
-  // {
-  //   accessorKey: "tinh_trang_huu_tri",
-  //   header: "Hưu trí",
-  // },
 ];

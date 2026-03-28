@@ -1,129 +1,3 @@
-// "use client";
-
-// import { useState, useEffect } from "react";
-// import * as XLSX from "xlsx";
-
-// type ContestStat = {
-//   party_member_id: string;
-//   ho_ten: string;
-//   contest_name: string;
-//   month: number;
-//   year: number;
-//   title?: string | null;
-//   rank?: number | null;
-//   score?: number | null;
-// };
-
-// export default function ContestStatsPage() {
-//   const [stats, setStats] = useState<ContestStat[]>([]);
-//   const [loading, setLoading] = useState(true);
-
-//   const loadStats = async () => {
-//     const res = await fetch("http://localhost:5000/api/contest-stats");
-//     const json = await res.json();
-//     setStats(json.data || []);
-//     setLoading(false);
-//   };
-
-//   useEffect(() => {
-//     loadStats();
-//   }, []);
-
-//   // ================= GROUP DATA =================
-
-//   const grouped = Object.values(
-//     stats.reduce((acc: any, item) => {
-//       if (!acc[item.party_member_id]) {
-//         acc[item.party_member_id] = {
-//           ho_ten: item.ho_ten,
-//           items: [],
-//         };
-//       }
-//       acc[item.party_member_id].items.push(item);
-//       return acc;
-//     }, {}),
-//   );
-
-//   // ================= EXPORT =================
-
-//   const exportToExcel = () => {
-//     const excelData = stats.map((s) => ({
-//       "Đảng viên": s.ho_ten,
-//       "Cuộc thi": s.contest_name,
-//       Tháng: s.month,
-//       Năm: s.year,
-//       "Danh hiệu": s.title || "-",
-//       Hạng: s.rank ?? "-",
-//       Điểm: s.score ?? "-",
-//     }));
-
-//     const ws = XLSX.utils.json_to_sheet(excelData);
-//     const wb = XLSX.utils.book_new();
-//     XLSX.utils.book_append_sheet(wb, ws, "ThongKe");
-
-//     XLSX.writeFile(wb, "Thong_ke_cuoc_thi.xlsx");
-//   };
-
-//   if (loading) return <div className="p-6 text-center">Đang tải...</div>;
-
-//   return (
-//     <div className="container text-sm mx-auto p-6 bg-white border-[#ccc] rounded-[5px]">
-//       <div className="flex justify-between items-center mb-6">
-//         <h1 className="text-xl font-bold text-[#232934]">Thống kê tham gia cuộc thi</h1>
-
-//         <button
-//           onClick={exportToExcel}
-//           className="px-5 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded"
-//         >
-//           Xuất Excel
-//         </button>
-//       </div>
-
-//       <table className="w-full border-collapse border text-[13px]">
-//         <thead>
-//           <tr className="bg-[#e6edf5]">
-//             <th className="border px-3 py-2">Đảng viên</th>
-//             <th className="border px-3 py-2">Cuộc thi</th>
-//             <th className="border px-3 py-2">Thời gian</th>
-//             <th className="border px-3 py-2">Danh hiệu</th>
-//             <th className="border px-3 py-2">Hạng</th>
-//             <th className="border px-3 py-2">Điểm</th>
-//           </tr>
-//         </thead>
-
-//         <tbody>
-//           {grouped.map((group: any) =>
-//             group.items.map((row: ContestStat, index: number) => (
-//               <tr key={row.party_member_id + index}>
-//                 {/* MERGE NAME */}
-//                 {index === 0 && (
-//                   <td rowSpan={group.items.length} className="border px-3 py-2 font-medium align-middle ">
-//                     {group.ho_ten}
-//                   </td>
-//                 )}
-
-//                 <td className="border px-3 py-2">{row.contest_name}</td>
-
-//                 <td className="border px-3 py-2 text-center">
-//                   {row.month}/{row.year}
-//                 </td>
-
-//                 <td className="border px-3 py-2">
-//                   {row.title || <span className="text-gray-400 italic">Không có</span>}
-//                 </td>
-
-//                 <td className="border px-3 py-2 text-center">{row.rank ?? "-"}</td>
-
-//                 <td className="border px-3 py-2 text-center">{row.score ?? "-"}</td>
-//               </tr>
-//             )),
-//           )}
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
@@ -184,28 +58,7 @@ export default function ContestStatsPage() {
     );
   }, [filteredStats]);
 
-  // ================= EXPORT (dùng dữ liệu đã filter) =================
-  // const exportToExcel = () => {
-  //   const excelData = filteredStats.map((s) => ({
-  //     "Đảng viên": s.ho_ten,
-  //     "Cuộc thi": s.contest_name,
-  //     Tháng: s.month,
-  //     Năm: s.year,
-  //     "Danh hiệu": s.title || "-",
-  //     Hạng: s.rank ?? "-",
-  //     Điểm: s.score ?? "-",
-  //   }));
-
-  //   const ws = XLSX.utils.json_to_sheet(excelData);
-  //   const wb = XLSX.utils.book_new();
-  //   XLSX.utils.book_append_sheet(wb, ws, "ThongKe");
-
-  //   XLSX.writeFile(wb, "Thong_ke_cuoc_thi.xlsx");
-  // };
-
-  // ================= EXPORT =================
   const exportToExcel = () => {
-    // Tạo dữ liệu theo đúng thứ tự nhóm như trên bảng
     const excelData: any[] = [];
 
     grouped.forEach((group: any) => {
@@ -246,7 +99,6 @@ export default function ContestStatsPage() {
 
   if (loading) return <div className="p-6 text-center">Đang tải...</div>;
 
-  // Lấy danh sách năm và tháng có dữ liệu để làm select
   const years = Array.from(new Set(stats.map((s) => s.year))).sort((a, b) => b - a);
   const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 

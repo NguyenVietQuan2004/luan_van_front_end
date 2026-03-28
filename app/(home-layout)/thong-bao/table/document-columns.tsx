@@ -159,9 +159,7 @@ export const DocumentColumns: ColumnDef<Document>[] = [
     id: "actions",
     header: "Thao tác",
     cell: ({ row, table }) => {
-      // Lấy meta từ table context
       const meta = table.options.meta as { onViewDetail?: (doc: Document) => void } | undefined;
-
       return <DocumentActions doc={row.original} onViewDetail={meta?.onViewDetail} />;
     },
   },

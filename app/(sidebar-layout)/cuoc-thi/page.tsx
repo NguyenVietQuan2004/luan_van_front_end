@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { CuocthiColumns } from "./table/cuocthi-columns";
 import { DataTable } from "@/components/data-table";
 import { fetchCuocthiList, deleteCuocthi } from "@/lib/contest"; // tạo hàm api tương tự
-import SidebarLayout from "@/components/layout/sidebar-layout";
 import ButtonAddNew from "@/components/ButtonAdd";
 
 export default function CuocthiPage() {
@@ -51,13 +49,6 @@ export default function CuocthiPage() {
   return (
     <div className="text-sm mx-auto p-6 bg-white  border-[#ccc] rounded-[5px]">
       <div className="flex flex-row justify-between items-start mb-6">
-        {/* <Link
-         
-          className="text-[#515151] hover:bg-white/10 transition-all duration-300 border border-[#243f50] p-1.25 px-2 bg-[#F7F7F7]"
-        >
-          Thêm mới cuộc thi
-        </Link> */}
-
         <ButtonAddNew className="" href="/cuoc-thi/new/edit">
           Thêm mới cuộc thi
         </ButtonAddNew>

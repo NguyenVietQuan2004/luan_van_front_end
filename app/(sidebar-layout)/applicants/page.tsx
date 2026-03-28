@@ -219,11 +219,6 @@ export default function ApplicantsPage() {
                             </div>
                           )}
                           {step.file_url && (
-                            // <div className="text-xs text-blue-600 mt-1 flex items-center gap-1">
-                            //   📎 Có file đính kèm:
-                            //   <span className="underline">{step.file_name || "Xem file"}</span>
-                            // </div>
-
                             <div className="flex  gap-1 text-xs ">
                               File đính kèm:
                               <a

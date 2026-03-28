@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
-// ====== UTIL ======
 function toDateInput(value?: string | null) {
   if (!value) return "";
   return value.split("T")[0];
@@ -223,14 +222,11 @@ export default function CuocthiForm({ initialData = {}, onSubmit, isNew }: Props
           </tbody>
         </table>
 
-        {/* Nút hành động */}
         <div className="flex justify-end gap-4 pt-8">
           <button
             type="button"
             onClick={() => router.back()}
             className="px-8 py-3 cursor-pointer hover:opacity-75 rounded-lg  underline border-[#80B5D7] text-[14px]"
-
-            // className="px-8 py-3 cursor-pointer text-white hover:opacity-75 rounded-lg bg-[#3872B2] border border-[#80B5D7] text-[14px] font-bold"
           >
             Quay lại
           </button>

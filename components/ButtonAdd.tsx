@@ -11,19 +11,6 @@ const ButtonAddNew: React.FC<ButtonAddNewType> = ({ href, className, children })
   return (
     <Link
       href={href}
-      //   className={`
-      //     relative px-2.5 py-1.5
-      //     text-white font-semibold
-      //     rounded-[5px]
-      //     bg-linear-to-r from-[#1E57A3] via-[#2A85C9] to-[#46A9E0]
-
-      //     /* Đổ bóng Glow xanh giống trong ảnh */
-      //     shadow-[0_0_5px_rgba(30,60,176,0.5)]
-      //     hover:from-[#46A9E0] hover:via-[#2A85C9] hover:to-[#1E57A3]
-      //     transition-all duration-1000 ease-in-out
-      //     ${className}
-      //   `}
-
       className={`
         /* Layout & Text */
         relative px-6 py-2 

@@ -79,14 +79,6 @@ export function DataTable<TData, TValue>({
     // <div className="max-w-287.5 overflow-auto  ">
     <div className="w-full overflow-auto  ">
       <div className="flex items-center py-4 ">
-        {/* {filterField && (
-          <Input
-            placeholder={`Lọc theo ${columnLabels[filterField]}...`}
-            value={(table.getColumn(filterField)?.getFilterValue() as string) ?? ""}
-            onChange={(event) => table.getColumn(filterField)?.setFilterValue(event.target.value)}
-            className="max-w-xs  focus:border-[#3872b2]! bg-white ring-0! text-[13px] placeholder:text-[13px] border-[#254d79]  rounded-[5px] font-extralight! "
-          />
-        )} */}
         <div className="flex items-center py-4 gap-4">
           {filterField && (
             <Input

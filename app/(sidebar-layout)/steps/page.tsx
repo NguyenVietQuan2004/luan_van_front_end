@@ -44,12 +44,6 @@ export default function StepsPage() {
     <div className=" text-sm mx-auto p-6 bg-white border-[#ccc] rounded-[5px]">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-xl font-bold text-[#232934]">Quản lý các bước cảm tình Đảng</h1>
-        {/* <Link
-         
-          className="text-[#515151] hover:bg-white/10 transition-all duration-300 border border-[#243f50] p-1.25 px-3 bg-[#F7F7F7] rounded"
-        >
-        </Link> */}
-
         <ButtonAddNew href="/steps/new/edit" className="text-white">
           Thêm bước mới
         </ButtonAddNew>

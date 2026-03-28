@@ -1,29 +1,3 @@
-// // hooks/useTableFilter.ts
-// import { useState, useEffect } from "react";
-
-// export function useTableFilter(tableName: string = "default") {
-//   const storageKey = `table_filter_${tableName}`;
-
-//   const [globalFilter, setGlobalFilter] = useState<string>(() => {
-//     if (typeof window === "undefined") return "";
-//     return localStorage.getItem(storageKey) || "";
-//   });
-
-//   // Lưu vào localStorage khi filter thay đổi
-//   useEffect(() => {
-//     localStorage.setItem(storageKey, globalFilter);
-//   }, [globalFilter, storageKey]);
-
-//   // Xóa filter (nếu cần)
-//   const clearFilter = () => setGlobalFilter("");
-
-//   return {
-//     globalFilter,
-//     setGlobalFilter,
-//     clearFilter,
-//   };
-// }
-
 import { useState, useEffect, useCallback } from "react";
 
 export function useTableFilter(tableName: string = "default") {

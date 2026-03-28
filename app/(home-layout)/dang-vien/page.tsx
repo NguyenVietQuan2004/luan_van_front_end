@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { deleteDangVien, fetchDangVienList } from "@/lib/api";
 import { DangVien } from "@/types/dangvien";
 import { DangVienColumns } from "./table/dangvien-columns";
@@ -14,7 +13,6 @@ export default function DangVienPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Hàm fetch danh sách (có thể gọi lại khi cần refresh)
   const loadDangViens = async () => {
     setLoading(true);
     setError(null);
@@ -58,11 +56,6 @@ export default function DangVienPage() {
   return (
     <div className="text-sm mx-auto p-6 bg-white border border-solid border-[#ccc] rounded-[5px]">
       <div className="flex flex-row  justify-between items-start mb-6">
-        {/* <Link
-          href="/dang-vien/new/edit"
-          className=" text-[#515151] hover:bg-white/10 transition-all duration-300 border  border-[#243f50] p-1.25 px-2 bg-[#F7F7F7]"
-        >
-        </Link> */}
         <ButtonAddNew className="" href="/dang-vien/new/edit">
           Thêm mới đảng viên
         </ButtonAddNew>
