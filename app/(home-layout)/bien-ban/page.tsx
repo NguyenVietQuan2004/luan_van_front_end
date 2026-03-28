@@ -236,7 +236,7 @@ export default function BienBanFormPage() {
   const onSubmit = async (data: BienBanForm) => {
     try {
       // Bước 1: Phân loại (giữ nguyên, nhưng sửa fullString)
-      const classifyRes = await fetch("http://127.0.0.1:8000/classify-meeting", {
+      const classifyRes = await fetch(`${process.env.NEXT_PUBLIC_API_AI}/classify-meeting`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -250,7 +250,7 @@ export default function BienBanFormPage() {
       const classified = await classifyRes.json();
 
       // Bước 2: Tạo file Word
-      const docRes = await fetch("http://127.0.0.1:8000/create-docx", {
+      const docRes = await fetch(`${process.env.NEXT_PUBLIC_API_AI}/create-docx`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

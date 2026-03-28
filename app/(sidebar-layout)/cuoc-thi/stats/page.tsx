@@ -23,7 +23,7 @@ export default function ContestStatsPage() {
   const [selectedYear, setSelectedYear] = useState<number | "all">("all");
 
   const loadStats = async () => {
-    const res = await fetch("http://localhost:5000/api/contest-stats");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/contest-stats`);
     const json = await res.json();
     setStats(json.data || []);
     setLoading(false);

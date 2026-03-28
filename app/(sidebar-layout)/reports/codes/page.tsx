@@ -42,7 +42,7 @@ export default function ReportCodesPage() {
     try {
       const nextData = await fetchNextSo(code._id);
       const nextSo = nextData.nextSo;
-      const pythonUrl = `http://127.0.0.1:8000/api/reports/codes/template?code_id=${encodeURIComponent(code.code)}&type_id=${encodeURIComponent(code.type_id?.name || "BIÊN BẢN")}&so=${nextSo}`;
+      const pythonUrl = `${process.env.NEXT_PUBLIC_API_AI}/api/reports/codes/template?code_id=${encodeURIComponent(code.code)}&type_id=${encodeURIComponent(code.type_id?.name || "BIÊN BẢN")}&so=${nextSo}`;
       const response = await fetch(pythonUrl);
       if (!response.ok) throw new Error("Không thể tạo file template");
       const blob = await response.blob();
