@@ -3,17 +3,19 @@ import Link from "next/link";
 
 const menuItems = [
   {
-    label: "Báo cáo",
-    src: "https://dkmh.ctu.edu.vn/htql/sinhvien/images/phanhe/korganizer.png",
-    href: "/bao-cao",
-  },
-  {
-    label: "Nghị quyết",
+    label: "Quản lý báo cáo\nnghị quyết",
     src: "https://dkmh.ctu.edu.vn/htql/sinhvien/images/phanhe/hetinchi.gif",
-    href: "/nghi-quyet",
+
+    // src: "https://dkmh.ctu.edu.vn/htql/sinhvien/images/phanhe/korganizer.png",
+    href: "/reports",
   },
+  // {
+  //   label: "Nghị quyết",
+  //   src: "https://dkmh.ctu.edu.vn/htql/sinhvien/images/phanhe/hetinchi.gif",
+  //   href: "/nghi-quyet",
+  // },
   {
-    label: "Trích xuất thông tin lý lịch",
+    label: "Trích xuất thông tin\nlý lịch",
     src: "https://icons.iconarchive.com/icons/trayse101/photoshop-filetypes/128/profile-icon.png",
     href: "/trich-xuat",
   },
@@ -40,12 +42,12 @@ const menuItems = [
   },
 
   {
-    label: "Thông báo công văn đến các đảng viên",
+    label: "Thông báo công văn\nđến các đảng viên",
     src: "https://icons.iconarchive.com/icons/pelfusion/flat-folder/128/Notification-Folder-icon.png",
     href: "/thong-bao",
   },
   {
-    label: "Tạo biên bản, cuộc họp",
+    label: "Tạo biên bản\ncuộc họp",
     src: "https://icons.iconarchive.com/icons/dakirby309/simply-styled/128/Microsoft-Word-2013-icon.png",
     href: "/bien-ban",
   },
@@ -114,7 +116,7 @@ export default function HomePage() {
                 <div className="mb-0.5">
                   <img alt="" className="w-12 h-12" src={item.src} />
                 </div>
-                <span className="text-base text-center">{item.label}</span>
+                <span className="text-base text-center  whitespace-pre-line">{item.label}</span>
               </Link>
             ))}
           </div>
