@@ -15,7 +15,7 @@ const menuItems = [
   //   href: "/nghi-quyet",
   // },
   {
-    label: "Trích xuất thông tin\nlý lịch",
+    label: "Trích xuất\nthông tin lý lịch",
     src: "https://icons.iconarchive.com/icons/trayse101/photoshop-filetypes/128/profile-icon.png",
     href: "/trich-xuat",
   },

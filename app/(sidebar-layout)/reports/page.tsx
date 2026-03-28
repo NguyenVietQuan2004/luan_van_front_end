@@ -108,7 +108,7 @@ export default function ReportsPage() {
             onChange={(e) => setSelectedCodeName(e.target.value)}
             className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none"
           >
-            <option value="">-- Tất cả mã báo cáo --</option>
+            <option value="">-- Tất cả loại --</option>
 
             {reportCodeNames.map((name) => (
               <option key={name} value={name}>

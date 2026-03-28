@@ -41,7 +41,7 @@ export default function ReportTypesPage() {
   return (
     <div className="text-sm mx-auto p-6 bg-white border-[#ccc] rounded-[5px]">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-xl font-bold text-[#232934]">Quản lý Loại Báo cáo</h1>
+        <h1 className="text-xl font-bold text-[#232934]">Quản lý loại Báo cáo</h1>
         <ButtonAddNew href="/reports/types/new/edit" className="text-white">
           Thêm loại mới
         </ButtonAddNew>

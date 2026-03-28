@@ -5,10 +5,10 @@ function Headers() {
     <>
       <div>
         <div
-          className="w-full shadow bg-black "
+          className="w-full shadow  "
           style={{
             backgroundImage:
-              "url('https://accounts.ctu.edu.vn/authenticationendpoint/extensions/layouts/custom/carbon.super/assets/images/bg_banner.png')",
+              "url('https://accounts.ctu.edu.vn/authenticationendpoint/extensions/layouts/custom/carbon.super/assets/images/banner.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
