@@ -81,7 +81,7 @@ function DocumentActions({ doc, onViewDetail }: { doc: Document; onViewDetail?: 
           Xem chi tiết
         </DropdownMenuItem>
         <DropdownMenuItem onClick={handleNotify} className="text-emerald-600 focus:text-emerald-700">
-          📨 Gửi thông báo cho đảng viên
+          Gửi thông báo
         </DropdownMenuItem>
         <DropdownMenuItem onClick={handleDelete} className="text-red-600 focus:text-red-700 focus:bg-red-50">
           Xóa

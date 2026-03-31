@@ -17,7 +17,7 @@ const menuItems = [
   {
     label: "Trích xuất\nthông tin lý lịch",
     src: "https://icons.iconarchive.com/icons/trayse101/photoshop-filetypes/128/profile-icon.png",
-    href: "/trich-xuat",
+    href: "/syllabus",
   },
   {
     label: "Đảng phí",
@@ -78,25 +78,22 @@ export default function HomePage() {
               <li>Quản lý tập trung thông tin đảng viên và cảm tình Đảng</li>
               <li>Tự động hóa xử lý hồ sơ và dữ liệu hành chính</li>
               <li>Hỗ trợ lập báo cáo, nghị quyết nhanh chóng</li>
-              <li>Tăng độ chính xác và giảm sai sót trong xử lý dữ liệu</li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold text-[#3872b2] mb-1">Chức năng nổi bật</h3>
             <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1">
-              <li>Quản lý thông tin đảng viên, cảm tình Đảng</li>
-              <li>Quản lý báo cáo, nghị quyết, sinh hoạt chi bộ</li>
+              <li>Quản lý thông tin đảng viên, cảm tình Đảng, báo cáo, nghị quyết</li>
               <li>Quản lý đảng phí và quá trình thu nộp</li>
               <li>Theo dõi hoạt động, cuộc họp và cuộc thi</li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-[#3872b2] mb-1">Ứng dụng trí tuệ nhân tạo</h3>
+            <h3 className="font-semibold text-[#3872b2] mb-1">Các chức năng nổi bậc</h3>
             <ul className="list-disc pl-5 text-sm text-gray-700 space-y-1">
               <li>Tự động trích xuất thông tin từ file lý lịch</li>
-              <li>Chuẩn hóa dữ liệu và lưu trữ có cấu trúc</li>
               <li>Tóm tắt nội dung công văn, thông báo</li>
               <li>Tự động tạo biên bản họp từ nội dung nhập tự do</li>
             </ul>
