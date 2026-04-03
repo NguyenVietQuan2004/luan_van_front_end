@@ -74,7 +74,7 @@ function DocumentActions({ doc, onViewDetail }: { doc: Document; onViewDetail?: 
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuLabel>Hành động</DropdownMenuLabel>
+        <DropdownMenuLabel>Thao tác</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={handleCopyId}>Copy ID</DropdownMenuItem>
         <DropdownMenuItem onClick={() => onViewDetail && onViewDetail(doc)} disabled={!onViewDetail}>
@@ -96,7 +96,7 @@ export const DocumentColumns: ColumnDef<Document>[] = [
     accessorKey: "file_name",
     header: ({ column }) => (
       <Button
-        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        className="font-bold! text-[13px] text-[#232934]! hover:bg-transparent   p-0"
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
@@ -123,7 +123,7 @@ export const DocumentColumns: ColumnDef<Document>[] = [
   },
   {
     accessorKey: "deadline",
-    header: "Deadline",
+    header: "Hạn chót",
     cell: ({ row }) => formatDeadline(row.original.deadline),
   },
   {
@@ -131,7 +131,7 @@ export const DocumentColumns: ColumnDef<Document>[] = [
     header: ({ column }) => (
       <Button
         variant="ghost"
-        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        className="font-bold! text-[13px] text-[#232934]! hover:bg-transparent   p-0"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         Upload lúc

@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 const reportTypeSchema = z.object({
-  name: z.string().min(1, "Tên loại báo cáo không được để trống"),
+  name: z.string().min(1, "Tên loại tài liệu không được để trống"),
 });
 
 type ReportTypeFormData = z.infer<typeof reportTypeSchema>;
@@ -66,14 +66,14 @@ export default function ReportTypeForm({ initialData = null, onSubmit, isNew }: 
           <tbody>
             <tr>
               <td colSpan={2} className="font-bold text-[14px] bg-[#EDF4F9] pl-2 py-1">
-                Thông tin loại báo cáo
+                Thông tin loại tài liệu
               </td>
             </tr>
 
             <tr>
-              <td className={label}>Tên loại báo cáo *</td>
+              <td className={label}>Tên loại tài liệu *</td>
               <td className="border px-2 py-2">
-                <input {...register("name")} className={input} placeholder="Ví dụ: Báo cáo định kỳ, Nghị quyết..." />
+                <input {...register("name")} className={input} placeholder="Ví dụ: Báo cáo, Nghị quyết..." />
                 {errors.name && <p className="text-red-600 text-xs mt-1">{errors.name.message}</p>}
               </td>
             </tr>
@@ -93,7 +93,7 @@ export default function ReportTypeForm({ initialData = null, onSubmit, isNew }: 
             disabled={isSubmitting}
             className="bg-[#3872B2] border cursor-pointer hover:opacity-75 border-[#80B5D7] text-[14px] font-bold px-10 py-3 text-white rounded-lg disabled:opacity-60"
           >
-            {isSubmitting ? "Đang lưu..." : "Lưu loại báo cáo"}
+            {isSubmitting ? "Đang lưu..." : "Lưu loại tài liệu"}
           </button>
         </div>
       </form>

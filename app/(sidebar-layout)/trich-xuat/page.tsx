@@ -66,9 +66,9 @@ export default function SyllabusPage() {
         <thead>
           <tr className="bg-[#EDF4F9] *:font-semibold">
             <th className="border border-[#ccc] px-3 py-2 text-left font-medium">Tên file gốc</th>
-            <th className="border border-[#ccc] px-3 py-2 text-left font-medium">Ngày extract</th>
-            <th className="border border-[#ccc] px-3 py-2 text-center font-medium">Số section</th>
-            <th className="border border-[#ccc] px-3 py-2 text-center font-medium">Hành động</th>
+            <th className="border border-[#ccc] px-3 py-2 text-left font-medium">Địa chỉ</th>
+            {/* <th className="border border-[#ccc] px-3 py-2 text-center font-medium">Số section</th> */}
+            <th className="border border-[#ccc] px-3 py-2 text-center font-medium">Thao tác</th>
           </tr>
         </thead>
         <tbody>
@@ -83,15 +83,16 @@ export default function SyllabusPage() {
               const sectionCount = Object.keys(s.sections || {}).length;
               // Lấy tên người từ section_1
               const personName = s.sections?.section_1?.content || s.originalName;
+              const address = s.sections?.section_7?.content || s.originalName;
 
               return (
                 <tr key={s._id} className="hover:bg-gray-50">
                   <td className="border border-[#ccc] px-3 py-2">{personName}</td>
-                  <td className="border border-[#ccc] px-3 py-2">{new Date(s.extractedAt).toLocaleString("vi-VN")}</td>
-                  <td className="border border-[#ccc] px-3 py-2 text-center">{sectionCount}</td>
+                  <td className="border border-[#ccc] px-3 py-2">{address}</td>
+                  {/* <td className="border border-[#ccc] px-3 py-2 text-center">{sectionCount}</td> */}
                   <td className="border border-[#ccc] px-3 py-2 text-center">
                     <div className="flex gap-3 justify-center">
-                      <Link href={`/syllabus/${s._id}/edit`} className="text-blue-600 hover:underline">
+                      <Link href={`/trich-xuat/${s._id}/edit`} className="text-blue-600 hover:underline">
                         Chỉnh sửa
                       </Link>
                       <button onClick={() => handleDelete(s._id, personName)} className="text-red-600 hover:underline">

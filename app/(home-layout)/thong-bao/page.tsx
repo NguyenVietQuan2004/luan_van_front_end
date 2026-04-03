@@ -125,8 +125,12 @@ export default function Home() {
           <div className="p-5 border-b border-slate-200">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
               <div>
-                <h1 className="text-xl font-bold  text-[#232934]">Trích xuất Tài liệu</h1>
-                <p className="text-sm text-slate-600 mt-1">Upload → lấy deadline, tóm tắt, markdown tự động</p>
+                <h1 className="text-xl font-bold  text-[#232934]">Trích xuất Tài liệu - Gửi thông báo tự động</h1>
+                <div className="text-[#3872b2] mt-1 text-[13px] w-2/3 leading-relaxed mb-6">
+                  Hệ thống sẽ tự động gửi thông báo đến các đảng viên 1 ngày trước hạn ( nếu có )
+                </div>
+
+                {/* <p className="text-sm text-slate-600 mt-1">Upload → lấy deadline, tóm tắt, markdown tự động</p> */}
               </div>
             </div>
 
@@ -218,8 +222,14 @@ export default function Home() {
 
         {/* Modal chi tiết */}
         {selectedDoc && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto">
+          <div
+            onClick={() => setSelectedDoc(null)}
+            className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+          >
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="bg-white rounded-xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto"
+            >
               <div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center z-10">
                 <h2 className="text-xl font-bold text-slate-900 truncate pr-10">{selectedDoc.file_name}</h2>
                 <button onClick={() => setSelectedDoc(null)} className="text-slate-500 hover:text-slate-900 text-2xl">

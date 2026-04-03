@@ -108,7 +108,7 @@ function HeadingItem({
           )}
         />
 
-        <select
+        {/* <select
           className="h-6.5 px-2 border border-gray-400 text-[13px] bg-white rounded"
           {...control.register(`${path}.type`)}
         >
@@ -117,7 +117,7 @@ function HeadingItem({
           <option value="roman">i. ii. iii.</option>
           <option value="bullet">•</option>
           <option value="dash">-</option>
-        </select>
+        </select> */}
 
         {onRemove && (
           <button type="button" onClick={onRemove} className="text-red-600 hover:text-red-800 text-xs">
@@ -244,10 +244,10 @@ export default function BienBanFormPage() {
           structure: JSON.stringify(flattenHeadingsNumbered(data.headings)),
         }),
       });
-
       if (!classifyRes.ok) throw new Error("Lỗi phân loại");
 
       const classified = await classifyRes.json();
+      console.log(classified);
 
       // Bước 2: Tạo file Word
       const docRes = await fetch(`${process.env.NEXT_PUBLIC_API_AI}/create-docx`, {

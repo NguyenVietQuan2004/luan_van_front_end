@@ -117,7 +117,7 @@ export default function ApplicantStepsPage() {
             <th className="border px-3 py-2 text-center">Hoàn thành</th>
             <th className="border px-3 py-2 text-left">Ghi chú (Key → Date)</th>
             <th className="border px-3 py-2 text-left">File</th>
-            <th className="border px-3 py-2 text-center">Hành động</th>
+            <th className="border px-3 py-2 text-center">Thao tác</th>
           </tr>
         </thead>
         <tbody>

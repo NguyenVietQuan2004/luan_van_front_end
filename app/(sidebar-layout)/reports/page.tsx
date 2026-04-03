@@ -58,7 +58,7 @@ export default function ReportsPage() {
   }, [reports, searchTerm, selectedCodeName]);
 
   const handleDelete = async (id: string) => {
-    if (!confirm("Xác nhận xóa báo cáo này?")) return;
+    if (!confirm("Xác nhận xóa tài liệu này?")) return;
     try {
       await deleteReport(id);
       await loadData();
@@ -72,11 +72,11 @@ export default function ReportsPage() {
   return (
     <div className="text-sm mx-auto p-6 bg-white border-[#ccc] rounded-[5px]">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-xl font-bold text-[#232934">Quản lý Báo cáo - Văn bản</h1>
+        <h1 className="text-xl font-bold text-[#232934">Quản lý Tài liệu - Văn bản</h1>
 
         <div className="flex gap-3">
           <ButtonAddNew href="/reports/new/edit" className="text-white">
-            Thêm báo cáo mới
+            Thêm tài liệu mới
           </ButtonAddNew>
         </div>
       </div>
@@ -87,10 +87,10 @@ export default function ReportsPage() {
         <div className="relative flex-1 max-w-md">
           <input
             type="text"
-            placeholder="Tìm theo tiêu đề hoặc mã báo cáo..."
+            placeholder="Tìm theo mã danh mục..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2.5 pl-10 focus:outline-none text-sm"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2.5 pl-3 focus:outline-none text-sm"
           />
           {searchTerm && (
             <button
@@ -108,7 +108,7 @@ export default function ReportsPage() {
             onChange={(e) => setSelectedCodeName(e.target.value)}
             className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none"
           >
-            <option value="">-- Tất cả loại --</option>
+            <option value="">-- Tất cả danh mục --</option>
 
             {reportCodeNames.map((name) => (
               <option key={name} value={name}>
@@ -121,8 +121,8 @@ export default function ReportsPage() {
 
       <p className="text-xs text-gray-500 mb-4">
         {searchTerm || selectedCodeName
-          ? `Tìm thấy ${filteredReports.length} báo cáo`
-          : `Tổng số báo cáo: ${reports.length}`}
+          ? `Tìm thấy ${filteredReports.length} tài liệu`
+          : `Tổng số tài liệu: ${reports.length}`}
       </p>
 
       {error && <p className="text-red-600 mb-4">{error}</p>}
@@ -130,12 +130,12 @@ export default function ReportsPage() {
       <table className="w-full border-collapse border text-[13px]">
         <thead>
           <tr className="bg-[#e6edf5]">
-            <th className="border px-3 py-2">Số hiệu</th>
+            <th className="border px-3 py-2">Mã danh mục</th>
             <th className="border px-3 py-2">Loại</th>
             <th className="border px-3 py-2">Tiêu đề</th>
             <th className="border px-3 py-2">Ngày ban hành</th>
             <th className="border px-3 py-2">File</th>
-            <th className="border px-3 py-2">Hành động</th>
+            <th className="border px-3 py-2">Thao tác</th>
           </tr>
         </thead>
 
@@ -184,7 +184,7 @@ export default function ReportsPage() {
           {filteredReports.length === 0 && (
             <tr>
               <td colSpan={6} className="text-center py-8 text-gray-500">
-                Không tìm thấy báo cáo nào phù hợp với điều kiện lọc
+                Không tìm thấy tài liệu nào phù hợp với điều kiện lọc
               </td>
             </tr>
           )}

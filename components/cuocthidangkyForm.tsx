@@ -132,7 +132,7 @@ export default function CuocthidangkyForm({ initialData = {}, onSubmit, isNew }:
     return <div>Loading...</div>;
   }
   return (
-    <div className="container text-[13px] mx-auto p-4 bg-white border rounded">
+    <div className="container text-[13px] mx-auto p-4 bg-white  rounded">
       <form onSubmit={submitHandler} className="space-y-10 pb-12">
         <div className="w-full mb-px mt-4 text-sm bg-linear-to-b from-[#2f6fb3] to-[#0b3d91] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900 shadow-sm">
           {isNew}
@@ -284,9 +284,27 @@ export default function CuocthidangkyForm({ initialData = {}, onSubmit, isNew }:
                 )}
               </td>
             </tr>
-            <tr>
+            {/* <tr>
+
               <td colSpan={4}>
                 <textarea {...register("note")} className="w-full border" />
+              </td>
+            </tr> */}
+
+            <tr>
+              <td colSpan={4} className="bg-[#e6edf5] px-2 py-1 border font-semibold">
+                Ghi chú
+              </td>
+            </tr>
+
+            <tr>
+              <td colSpan={4} className="border px-2 py-2">
+                <textarea
+                  {...register("note")}
+                  rows={4}
+                  className="w-full border bg-white px-2 py-1 text-[13px]"
+                  placeholder="Ghi chú..."
+                />
               </td>
             </tr>
           </tbody>

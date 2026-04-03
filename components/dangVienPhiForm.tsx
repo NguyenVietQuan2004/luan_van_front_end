@@ -297,7 +297,7 @@ export default function DangVienPhiForm({ initialData = {}, onSubmit, isNew }: P
                 <td className={`${td} border px-2 py-1 text-center font-medium`}>Từ ngày</td>
                 <td className={`${td} border px-2 py-1 text-center font-medium`}>Đến ngày</td>
                 <td className={`${td} border px-2 py-1 text-center font-medium`}>Lý do</td>
-                <td className={`${td} border px-2 py-1 text-center font-medium`}>Hành động</td>
+                <td className={`${td} border px-2 py-1 text-center font-medium`}>Thao tác</td>
               </tr>
             )}
 

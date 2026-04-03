@@ -147,7 +147,7 @@ export default function ApplicantsPage() {
             placeholder="Tìm kiếm theo họ tên..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2.5 pl-10 focus:outline-none text-sm"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2.5 pl-4 focus:outline-none text-sm"
           />
           {searchTerm && (
             <button
@@ -168,8 +168,8 @@ export default function ApplicantsPage() {
         <thead>
           <tr className="bg-[#e6edf5]">
             <th className="border px-3 py-2">Họ tên</th>
-            <th className="border px-3 py-2">Chi tiết các bước</th>
-            <th className="border px-3 py-2">Hành động</th>
+            <th className="border px-3 py-2">Quá trình hoàn thành các bước</th>
+            <th className="border px-3 py-2">Thao tác</th>
           </tr>
         </thead>
         <tbody>
@@ -242,9 +242,9 @@ export default function ApplicantsPage() {
                   </div>
                 </td>
 
-                <td className="border px-3 py-2 text-center">
+                <td className="border px-3 py-2 max-w-15 text-start">
                   <Link href={`/applicants/${app._id}/steps`} className="text-green-600 hover:underline font-medium">
-                    Quản lý bước
+                    Đi đến trang cập nhật thông tin các bước của cảm tình đảng
                   </Link>
                 </td>
               </tr>

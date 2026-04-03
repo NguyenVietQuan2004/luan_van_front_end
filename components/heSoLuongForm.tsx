@@ -118,7 +118,7 @@ export default function HeSoLuongForm({ initialData = {}, onSubmit, isNew }: Pro
           </tbody>
         </table>
 
-        {/* Nút hành động */}
+        {/* Nút thao tác */}
         <div className="flex gap-4 mt-6">
           <button
             type="submit"

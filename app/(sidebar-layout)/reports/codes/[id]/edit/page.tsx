@@ -40,7 +40,7 @@ export default function EditReportCodePage() {
       <ReportCodeForm
         initialData={initialData}
         onSubmit={handleSubmit}
-        isNew={isNew ? "Thêm mã báo cáo mới" : "Cập nhật mã báo cáo"}
+        isNew={isNew ? "Thêm mã danh mục mới" : "Cập nhật mã danh mục"}
       />
     </div>
   );

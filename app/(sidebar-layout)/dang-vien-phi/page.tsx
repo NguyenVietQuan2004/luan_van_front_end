@@ -46,12 +46,16 @@ export default function DangVienPhiPage() {
 
       <div className="text-[#3872b2] text-[13px] w-1/2 leading-relaxed mb-6">
         <p>
-          Trang quản lý thông tin lương, phụ cấp và miễn đảng phí của đảng viên. Mỗi đảng viên chỉ có một record duy
-          nhất.
+          Trang quản lý thông tin lương, phụ cấp và miễn đảng phí của đảng viên. Mỗi đảng viên chỉ có một dòng duy nhất.
         </p>
       </div>
 
-      <DataTable columns={DangVienPhiColumns} data={data} filterField="ho_ten" tableName="Danh sách Đảng viên phí" />
+      <DataTable
+        columns={DangVienPhiColumns}
+        data={data}
+        filterField="ho_ten"
+        tableName="Danh sách thông tin lương Đảng viên"
+      />
     </div>
   );
 }

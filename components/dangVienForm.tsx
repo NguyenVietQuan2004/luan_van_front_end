@@ -292,7 +292,7 @@ export default function DangVienForm({ initialData = {}, onSubmit, isNew }: Prop
               <td className={`${td} border px-2 py-1 text-center font-medium `}>Tên nghề</td>
               <td className={`${td} border px-2 py-1 text-center font-medium `}>Từ ngày</td>
               <td className={`${td} border px-2 py-1 text-center font-medium `}>Đến ngày</td>
-              <td className={`${td} border px-2 py-1 text-center font-medium `}>Hành động</td>
+              <td className={`${td} border px-2 py-1 text-center font-medium `}>Thao tác</td>
             </tr>
 
             {/* data */}
@@ -394,7 +394,7 @@ export default function DangVienForm({ initialData = {}, onSubmit, isNew }: Prop
               <td className={`${td} border px-2 py-1 text-center font-medium`}>Loại</td>
               <td className={`${td} border px-2 py-1 text-center font-medium`}>Ngày nhận</td>
               <td colSpan={2} className={`${td} border px-2 py-1 text-center font-medium`}>
-                Hành động
+                Thao tác
               </td>
             </tr>
 

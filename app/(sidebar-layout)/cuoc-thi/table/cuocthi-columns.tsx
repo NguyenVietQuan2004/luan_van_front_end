@@ -10,7 +10,7 @@ export const CuocthiColumns = (onDelete: (id: string) => void): ColumnDef<any>[]
     accessorKey: "name",
     header: ({ column }) => (
       <Button
-        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        className="font-bold! text-[13px]  text-[#232934]! hover:bg-transparent   p-0"
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
@@ -49,7 +49,7 @@ export const CuocthiColumns = (onDelete: (id: string) => void): ColumnDef<any>[]
   },
   {
     id: "actions",
-    header: "Hành động",
+    header: "Thao tác",
     cell: ({ row }) => <CuocthiAction data={row.original} onDelete={onDelete} />,
   },
 ];

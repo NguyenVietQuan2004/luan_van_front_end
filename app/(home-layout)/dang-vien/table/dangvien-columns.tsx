@@ -17,7 +17,7 @@ export const DangVienColumns: ColumnDef<DangVien>[] = [
     header: ({ column }) => (
       <Button
         variant="ghost"
-        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        className="font-bold! text-[13px] text-[#232934]! hover:bg-transparent   p-0"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         Họ tên
@@ -55,7 +55,7 @@ export const DangVienColumns: ColumnDef<DangVien>[] = [
   },
   {
     id: "actions",
-    header: "Hành động",
+    header: "Thao tác",
     cell: ({ row }) => <DangVienAction data={row.original} />,
   },
 ];

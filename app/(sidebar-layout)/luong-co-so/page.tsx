@@ -50,7 +50,7 @@ export default function LuongCoSoPage() {
 
       <div className="text-[#3872b2] text-[13px] w-1/2 leading-relaxed mb-6">
         <p>
-          Trang quản lý lịch sử mức lương cơ sở theo thời gian. Mức hiện hành là record có ngày kết thúc = null. Dữ liệu
+          Trang quản lý lịch sử mức lương cơ sở theo thời gian. Mức hiện hành là dòng không có ngày kết thúc. Dữ liệu
           dùng để tính lương, đảng phí và các khoản liên quan.
         </p>
       </div>

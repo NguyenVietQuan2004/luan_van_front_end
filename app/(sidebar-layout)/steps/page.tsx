@@ -58,7 +58,7 @@ export default function StepsPage() {
             <th className="border px-3 py-2">Tên bước</th>
             <th className="border px-3 py-2">File mẫu</th>
             <th className="border px-3 py-2">Ghi chú</th>
-            <th className="border px-3 py-2">Hành động</th>
+            <th className="border px-3 py-2">Thao tác</th>
           </tr>
         </thead>
         <tbody>

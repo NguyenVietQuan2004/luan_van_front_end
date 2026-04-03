@@ -41,7 +41,7 @@ export default function EditReportPage() {
       <ReportForm
         initialData={initialData}
         onSubmit={handleSubmit}
-        isNew={isNew ? "Thêm báo cáo mới" : "Cập nhật báo cáo"}
+        isNew={isNew ? "Thêm tài liệu mới" : "Cập nhật tài liệu"}
       />
     </div>
   );

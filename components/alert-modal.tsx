@@ -28,7 +28,7 @@ function AlertModal({ variant, action, onConfirm, isLoading, open, onClose, text
         <AlertDialogHeader>
           <AlertDialogTitle>Bạn có chắc không?</AlertDialogTitle>
           <AlertDialogDescription>
-            {(textWarning && <span className="text-red-400">{textWarning}</span>) || "Hành động này không thể hoàn tác"}
+            {(textWarning && <span className="text-red-400">{textWarning}</span>) || "Thao tác này không thể hoàn tác"}
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

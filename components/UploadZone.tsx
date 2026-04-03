@@ -24,7 +24,7 @@ export default function UploadZone() {
       const saved = await syllabusApi.createSyllabus(aiResult.sections || aiResult, file);
 
       alert("Upload & Extract thành công!");
-      router.push(`/syllabus/${saved._id}/edit`);
+      router.push(`/trich-xuat/${saved._id}/edit`);
     } catch (error: any) {
       alert("Lỗi: " + error.message);
     } finally {

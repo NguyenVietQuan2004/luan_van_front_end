@@ -278,7 +278,7 @@ export default function SyllabusEditPage() {
         setSections(data.sections || {});
       } catch {
         alert("Không tìm thấy syllabus");
-        router.push("/syllabus");
+        router.push("/trich-xuat");
       } finally {
         setLoading(false);
       }
@@ -311,7 +311,7 @@ export default function SyllabusEditPage() {
     try {
       await syllabusApi.update(syllabus._id, sections);
       alert("Lưu thành công!");
-      router.push("/syllabus");
+      router.push("/trich-xuat");
     } catch (err: any) {
       alert("Lưu thất bại: " + (err.message || "Lỗi không xác định"));
     } finally {
@@ -339,7 +339,7 @@ export default function SyllabusEditPage() {
           <h2 className="text-lg font-semibold text-gray-700">Chỉnh sửa hồ sơ</h2>
           <div className="text-xs text-gray-500">{syllabus?.originalName}</div>
         </div>
-        <button onClick={() => router.push("/syllabus")} className="text-blue-600 hover:underline text-sm">
+        <button onClick={() => router.push("/trich-xuat")} className="text-blue-600 hover:underline text-sm">
           ← Quay lại danh sách
         </button>
       </div>

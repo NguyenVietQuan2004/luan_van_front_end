@@ -17,10 +17,10 @@ const menuItems = [
   {
     label: "Trích xuất\nthông tin lý lịch",
     src: "https://icons.iconarchive.com/icons/trayse101/photoshop-filetypes/128/profile-icon.png",
-    href: "/syllabus",
+    href: "/trich-xuat",
   },
   {
-    label: "Đảng phí",
+    label: "Sổ thu đảng phí",
     src: "https://icons.iconarchive.com/icons/hopstarter/sleek-xp-basic/128/Money-icon.png",
     href: "/so-thu-nop-dang-phi",
   },

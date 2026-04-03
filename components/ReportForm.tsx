@@ -107,18 +107,18 @@ export default function ReportForm({ initialData = null, onSubmit, isNew }: Prop
           <tbody>
             <tr>
               <td colSpan={4} className="font-bold text-[14px] bg-[#EDF4F9] pl-2 py-1">
-                Thông tin báo cáo
+                Thông tin tài liệu
               </td>
             </tr>
 
             <tr>
-              <td className={label}>Mã báo cáo *</td>
+              <td className={label}>Mã tài liệu *</td>
               <td className="border px-2 py-2" colSpan={3}>
                 {loadingCodes ? (
                   <p className="text-gray-500 py-1">Đang tải danh sách mã...</p>
                 ) : (
                   <select {...register("code_id")} className={input}>
-                    <option value="">-- Chọn mã báo cáo --</option>
+                    <option value="">-- Chọn mã tài liệu --</option>
                     {availableCodes.map((code) => (
                       <option key={code._id} value={code._id}>
                         {code.code} - {code.name} ({code.type_id?.name})
@@ -172,7 +172,7 @@ export default function ReportForm({ initialData = null, onSubmit, isNew }: Prop
             disabled={isSubmitting}
             className="bg-[#3872B2] border cursor-pointer hover:opacity-75 border-[#80B5D7] text-[14px] font-bold px-10 py-3 text-white rounded-lg disabled:opacity-60"
           >
-            {isSubmitting ? "Đang gửi..." : "Lưu báo cáo"}
+            {isSubmitting ? "Đang gửi..." : "Lưu danh mục tài liệu"}
           </button>
         </div>
       </form>

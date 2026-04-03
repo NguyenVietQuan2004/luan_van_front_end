@@ -34,7 +34,7 @@ export const DangPhiColumns: ColumnDef<DangPhi>[] = [
     accessorKey: "dangvien_phi_id.dang_vien_id.ho_ten",
     header: ({ column }) => (
       <Button
-        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        className="font-bold! text-[13px] text-[#232934]! hover:bg-transparent   p-0"
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
@@ -110,7 +110,7 @@ export const DangPhiColumns: ColumnDef<DangPhi>[] = [
 
   {
     id: "actions",
-    header: "Hành động",
+    header: "Thao tác",
     cell: ({ row }) => <DangPhiAction data={row.original} />,
   },
 ];

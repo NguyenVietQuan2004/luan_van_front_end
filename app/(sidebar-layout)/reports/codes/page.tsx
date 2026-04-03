@@ -38,12 +38,33 @@ export default function ReportCodesPage() {
 
   const handleGetTemplate = async (code: any) => {
     if (!confirm(`Tạo template cho mã "${code.code} - ${code.name}"?`)) return;
-
     try {
       const nextData = await fetchNextSo(code._id);
       const nextSo = nextData.nextSo;
-      const pythonUrl = `${process.env.NEXT_PUBLIC_API_AI}/api/reports/codes/template?code_id=${encodeURIComponent(code.code)}&type_id=${encodeURIComponent(code.type_id?.name || "BIÊN BẢN")}&so=${nextSo}`;
-      const response = await fetch(pythonUrl);
+      // const pythonUrl = `${process.env.NEXT_PUBLIC_API_AI}/api/reports/codes/template?code_id=${encodeURIComponent(code.code)}&type_id=${encodeURIComponent(code.type_id?.name || "BIÊN BẢN")}&so=${nextSo}`;
+      // const response = await fetch(pythonUrl);
+
+      const pythonUrl = `${process.env.NEXT_PUBLIC_API_AI}/api/reports/codes/template`;
+      console.log(
+        JSON.stringify({
+          code_id: code.code,
+          type_id: code.type_id?.name || "BIÊN BẢN",
+          so: nextSo,
+          danh_sach_de_muc: code.danh_sach_de_muc,
+        }),
+      );
+      const response = await fetch(pythonUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          code_id: code.code,
+          type_id: code.type_id?.name || "BIÊN BẢN",
+          so: nextSo,
+          danh_sach_de_muc: code.danh_sach_de_muc,
+        }),
+      });
       if (!response.ok) throw new Error("Không thể tạo file template");
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
@@ -66,9 +87,9 @@ export default function ReportCodesPage() {
   return (
     <div className="text-sm mx-auto p-6 bg-white border-[#ccc] rounded-[5px]">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-xl font-bold text-[#232934]">Quản lý Mã Báo cáo</h1>
+        <h1 className="text-xl font-bold text-[#232934]">Quản lý danh mục tài liệu</h1>
         <ButtonAddNew href="/reports/codes/new/edit" className="text-white">
-          Thêm mã mới
+          Thêm danh mục mới
         </ButtonAddNew>
       </div>
 
@@ -77,10 +98,10 @@ export default function ReportCodesPage() {
       <table className="w-full border-collapse border text-[13px]">
         <thead>
           <tr className="bg-[#e6edf5]">
-            <th className="border px-3 py-2">Mã</th>
-            <th className="border px-3 py-2">Tên mã báo cáo</th>
+            <th className="border px-3 py-2">Mã danh mục</th>
+            <th className="border px-3 py-2">Tên danh mục</th>
             <th className="border px-3 py-2">Loại</th>
-            <th className="border px-3 py-2 w-48">Hành động</th>
+            <th className="border px-3 py-2 w-48">Thao tác</th>
           </tr>
         </thead>
         <tbody>

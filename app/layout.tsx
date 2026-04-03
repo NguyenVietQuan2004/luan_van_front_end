@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "Quản Lý Đảng Viên",
+  title: "Quản Lý Đảng Viên - KHMT",
   icons: {
     icon: "https://dkmhfe.ctu.edu.vn/static/media/logo.e5e97ff84ce962c657d2.png",
     apple: "https://dkmhfe.ctu.edu.vn/static/media/logo.e5e97ff84ce962c657d2.png",

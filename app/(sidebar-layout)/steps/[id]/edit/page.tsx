@@ -36,7 +36,7 @@ export default function EditStepPage() {
   }
 
   return (
-    <div className="container mx-auto p-6 max-w-4xl">
+    <div className="container mx-auto max-w-4xl">
       <StepForm
         initialData={initialData}
         onSubmit={handleSubmit}

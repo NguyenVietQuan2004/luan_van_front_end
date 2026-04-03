@@ -41,7 +41,7 @@ export default function ReportTypesPage() {
   return (
     <div className="text-sm mx-auto p-6 bg-white border-[#ccc] rounded-[5px]">
       <div className="flex justify-between items-center mb-6">
-        <h1 className="text-xl font-bold text-[#232934]">Quản lý loại Báo cáo</h1>
+        <h1 className="text-xl font-bold text-[#232934]">Quản lý loại tài liệu</h1>
         <ButtonAddNew href="/reports/types/new/edit" className="text-white">
           Thêm loại mới
         </ButtonAddNew>
@@ -52,8 +52,8 @@ export default function ReportTypesPage() {
       <table className="w-full border-collapse border text-[13px]">
         <thead>
           <tr className="bg-[#e6edf5]">
-            <th className="border px-3 py-2">Tên loại báo cáo</th>
-            <th className="border px-3 py-2 w-32">Hành động</th>
+            <th className="border px-3 py-2">Tên loại tài liệu</th>
+            <th className="border px-3 py-2 w-32">Thao tác</th>
           </tr>
         </thead>
         <tbody>

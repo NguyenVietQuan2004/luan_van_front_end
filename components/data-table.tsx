@@ -79,13 +79,13 @@ export function DataTable<TData, TValue>({
     // <div className="max-w-287.5 overflow-auto  ">
     <div className="w-full overflow-auto  ">
       <div className="flex items-center py-4 ">
-        <div className="flex items-center py-4 gap-4">
+        <div className="flex items-center mt-2 gap-4">
           {filterField && (
             <Input
               placeholder={`Lọc theo ${columnLabels[filterField] || filterField}...`}
               value={globalFilter}
               onChange={(event) => setGlobalFilter(event.target.value)}
-              className="max-w-xs ring-0! focus:border-[#3872b2] bg-white ring-0 text-[13px] placeholder:text-[13px] border-[#254d79] rounded-[5px]"
+              className="max-w-xs ring-0! focus:border-[#3872b2] bg-white  text-[13px] placeholder:text-[13px] border-[#254d79] rounded-[5px]"
             />
           )}
 
@@ -151,19 +151,19 @@ export function DataTable<TData, TValue>({
 
 
         
-        mb-px bg-linear-to-b from-[#418bdb] to-[#1047a4] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900 shadow-sm"
+        mb-px bg-linear-to-b from-[#418bdb] to-[#1047a4] text-[12px] text-white text-center font-semibold py-1 rounded-t-md border-b border-blue-900 shadow-sm"
         >
-          {tableName}
+          {tableName.toUpperCase()}
         </div>
 
-        <Table className="border border-[#80B5D7] text-[#232934]">
+        <Table className="border border-[#80B5D7] text-[13px] text-[#232934]">
           <TableHeader className="">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id} className=" border border-[#80B5D7] bg-[#DAE9F3] ">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
-                      className="min-w-25! border border-[#80B5D7] font-bold! text-[#232934]! "
+                      className="min-w-25! text-center border border-[#80B5D7] font-bold! text-[#232934]! "
                       key={header.id}
                     >
                       {header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
@@ -179,11 +179,11 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={`     ${index % 2 === 0 ? "bg-[#edf4f9]" : "bg-[#f7f7f7]"}  `}
+                  className={`    ${index % 2 === 0 ? "bg-[#edf4f9]" : "bg-[#f7f7f7]"}  `}
                 >
                   {row.getVisibleCells().map((cell, index1) => (
                     <TableCell
-                      className={` py-0.5 border-gray-200 ${index1 == 0 && "bg-[#dae9f3] border-[#80B5D7]"}   border max-w-50  overflow-hidden text-ellipsis whitespace-nowrap `}
+                      className={` last:text-center py-0.5 border-gray-200 ${index1 == 0 && "bg-[#dae9f3] border-[#80B5D7]"}   border max-w-50  overflow-hidden text-ellipsis whitespace-nowrap `}
                       key={cell.id}
                     >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -203,7 +203,7 @@ export function DataTable<TData, TValue>({
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
         <Button variant="outline" size="sm" onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
-          Previous
+          Trước
         </Button>
         {Array.from({ length: table.getPageCount() }, (_, i) => (
           <Button
@@ -217,7 +217,7 @@ export function DataTable<TData, TValue>({
         ))}
 
         <Button variant="outline" size="sm" onClick={() => table.nextPage()} disabled={!table.getCanNextPage()}>
-          Next
+          Sau
         </Button>
       </div>
     </div>

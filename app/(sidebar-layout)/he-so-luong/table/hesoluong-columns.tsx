@@ -11,7 +11,7 @@ export const HeSoLuongColumns: ColumnDef<HeSoLuong>[] = [
     accessorKey: "ma_ngach",
     header: ({ column }) => (
       <Button
-        className="font-bold! text-[#232934]! hover:bg-transparent p-0"
+        className="font-bold! text-[13px] text-[#232934]! hover:bg-transparent   p-0"
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
@@ -31,7 +31,7 @@ export const HeSoLuongColumns: ColumnDef<HeSoLuong>[] = [
   },
   {
     id: "actions",
-    header: "Hành động",
+    header: "Thao tác",
     cell: ({ row }) => <HeSoLuongAction data={row.original} />,
   },
 ];

@@ -77,7 +77,7 @@ export default function DangPhiPage() {
         <div>
           <Link
             href="/dang-phi/new/edit"
-            className="text-[#515151] hover:bg-white/10 rounded transition-all duration-300 border border-[#243f50] p-1.25 px-2 bg-[#F7F7F7] mr-4"
+            className="text-[#515151] text-[13px] hover:bg-white/10 rounded transition-all duration-300 border border-[#243f50] p-1.25 px-2 bg-[#F7F7F7] mr-4"
           >
             Tính cho từng đảng viên
           </Link>

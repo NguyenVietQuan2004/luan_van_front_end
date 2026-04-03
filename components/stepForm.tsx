@@ -76,9 +76,9 @@ export default function StepForm({ initialData = {}, onSubmit, isNew }: Props) {
   const td = "border px-2 bg-gray-100 py-2";
 
   return (
-    <div className="container text-[13px] mx-auto p-4 bg-white border border-solid border-[#ccc] rounded-[5px]">
+    <div className=" text-[13px] mx-auto p-4 bg-white border border-solid border-[#ccc] rounded-[5px]">
       <form onSubmit={handleSubmit(submitHandler)} className="space-y-10 pb-12">
-        <div className="w-full mb-px mt-4 text-sm bg-linear-to-b from-[#2f6fb3] to-[#0b3d91] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900 shadow-sm">
+        <div className="w-full mb-px  text-sm bg-linear-to-b from-[#2f6fb3] to-[#0b3d91] text-white text-center font-semibold py-2 rounded-t-md border-b border-blue-900 shadow-sm">
           {isNew}
         </div>
 
