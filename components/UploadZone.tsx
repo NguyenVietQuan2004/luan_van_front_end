@@ -11,18 +11,17 @@ export default function UploadZone() {
   const router = useRouter();
 
   const handleFile = async (file: File) => {
-    if (!file.name.match(/\.(docx|pdf|doc)$/i)) {
-      alert("Chỉ hỗ trợ file .docx, .pdf, .doc");
+    if (!file.name.match(/\.(docx|pdf|doc|png|jpg|jpeg)$/i)) {
+      alert("Chỉ hỗ trợ file .docx, .pdf, .doc, .png, .jpg, .jpeg");
       return;
     }
-
     setIsUploading(true);
     setStatus("Đang xử lý...");
 
     try {
       const aiResult = await syllabusApi.extractWithAI(file);
+      // console.log(aiResult);
       const saved = await syllabusApi.createSyllabus(aiResult.sections || aiResult, file);
-
       alert("Upload & Extract thành công!");
       router.push(`/trich-xuat/${saved._id}/edit`);
     } catch (error: any) {
