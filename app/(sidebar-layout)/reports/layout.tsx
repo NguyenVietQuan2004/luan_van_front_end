@@ -6,9 +6,9 @@ import SidebarLayout from "@/components/layout/sidebar-layout";
 //   { label: "Quản lý mã báo cáo", href: "/reports/codes" },
 // ];
 const navItems = [
+  { label: "Tài liệu", href: "/reports" },
   { label: "Loại tài liệu", href: "/reports/types" },
   { label: "Danh mục tài liệu", href: "/reports/codes" },
-  { label: "Tài liệu", href: "/reports" },
 ];
 
 export default function Layout({ children }: { children: React.ReactNode }) {

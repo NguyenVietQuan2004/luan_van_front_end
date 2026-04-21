@@ -257,14 +257,14 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {selectedDoc.markdown && (
+                  {/* {selectedDoc.markdown && (
                     <div>
                       <h3 className="text-lg font-semibold text-slate-800 mb-2">Markdown</h3>
                       <div className="bg-slate-900 text-slate-50 p-4 rounded-lg overflow-auto max-h-80 font-mono text-sm leading-6 whitespace-pre-wrap border border-slate-700">
                         {selectedDoc.markdown}
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </div>
             </div>

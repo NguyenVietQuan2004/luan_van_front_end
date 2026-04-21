@@ -165,18 +165,44 @@ export default function BienBanFormPage() {
   const form = useForm<BienBanForm>({
     resolver: zodResolver(bienBanSchema),
     defaultValues: {
-      coQuanChuQuan: "",
-      coQuanToChuc: "",
-      so: "",
-      tenCuocHop: "",
-      thoiGianBatDau: "",
-      diaDiem: "",
-      thanhPhanThamDu: "",
-      chuTri: "",
-      thuKy: "",
-      ketThucNgayGio: "",
-      fullString: "",
-      headings: [],
+      coQuanChuQuan: "THÀNH ĐOÀN CẦN THƠ",
+      coQuanToChuc: "BCH ĐOÀN ĐẠI HỌC CẦN THƠ",
+      so: "Số: 11 - CV/ĐTN",
+      tenCuocHop: "Biên bản họp",
+      thoiGianBatDau: "14 giờ, ngày 07 tháng 03 năm 2026",
+      diaDiem: "Hội trường rùa, Đại Học Cần Thơ",
+      thanhPhanThamDu: `1.Nguyễn Văn An
+2. Trần Thị Ngọc Mai
+3. Lê Hoàng Minh
+4. Phạm Thị Bảo Trâm
+5. Võ Quốc Huy`,
+      chuTri: "Thầy Hòa",
+      thuKy: "Cô Hiền",
+      ketThucNgayGio: "18 giờ, ngày 07 tháng 03 năm 2026",
+      fullString: `Chủ trì phổ biến nội dung, mục tiêu buổi họp và các vấn đề cần thảo luận.Đánh giá kết quả thực hiện công tác Đoàn và các nhiệm vụ được giao.
+Nêu các khó khăn, tồn tại trong quá trình triển khai.Đóng góp ý kiến xây dựng kế hoạch hoạt động trong thời gian tới.
+Thống nhất một số nhiệm vụ trọng tâm cần triển khai.`,
+      // headings: [],
+      headings: [
+        {
+          level: 1,
+          title: "Thông qua chương trình và mục đích cuộc họp",
+          type: "number",
+          children: [],
+        },
+        {
+          level: 1,
+          title: "Báo cáo tình hình hoạt động thời gian qua",
+          type: "number",
+          children: [],
+        },
+        {
+          level: 1,
+          title: "Thảo luận và đề xuất phương hướng hoạt động sắp tới",
+          type: "number",
+          children: [],
+        },
+      ],
     },
   });
 

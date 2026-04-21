@@ -60,7 +60,7 @@ function DocumentActions({ doc, onViewDetail }: { doc: Document; onViewDetail?: 
 
       if (!res.ok) throw new Error(await res.text());
 
-      toast?.success("✅ Đã gửi thông báo thành công!") || alert("Đã gửi thông báo!");
+      toast?.success("Đã gửi thông báo thành công!") || alert("Đã gửi thông báo!");
     } catch (err: any) {
       toast?.error("Gửi thất bại: " + err.message) || alert("Gửi thất bại");
     }

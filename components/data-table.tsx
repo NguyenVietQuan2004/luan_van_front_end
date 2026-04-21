@@ -159,7 +159,7 @@ export function DataTable<TData, TValue>({
         <Table className="border border-[#80B5D7] text-[13px] text-[#232934]">
           <TableHeader className="">
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className=" border border-[#80B5D7] bg-[#DAE9F3] ">
+              <TableRow key={headerGroup.id} className=" border  border-[#80B5D7] bg-[#f2fcff] ">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead
